@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/style.css?t=90051322">
+    <link rel="stylesheet" href="../dist/styles/main.css?t=cabfb525">
+    <script src="../assets/script.js?t=93f1a66c"></script>
+    <title>WordPress - Sage Directives</title>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body class="-menu-visible">
+    <div class="doc-layout">
+      <div class="toggle menu-toggle js-menu-toggle"></div>
+      <div class="menu toc-menu">
+        <ul>
+          <li class="menu-item -level-0 -parent">
+            <ul class="submenu">
+              <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Sage Directives</a>
+              </li>
+              <li class="menu-item -level-1 -parent"><span class="title">Usage</span>
+                <ul class="submenu">
+                  <li class="menu-item -level-2"><a class="link title -active link-usagewordpress" href="../usage/wordpress.html">WordPress</a>
+                    <ul class="headings heading-list">
+                      <li class="heading-item -depth-2"><a class="hlink link-@query" href="#@query">@query</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@posts" href="#@posts">@posts</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@title" href="#@title">@title</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@content" href="#@content">@content</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@excerpt" href="#@excerpt">@excerpt</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@author" href="#@author">@author</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@authorurl" href="#@authorurl">@authorurl</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@published" href="#@published">@published</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@modified" href="#@modified">@modified</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@shortcode" href="#@shortcode">@shortcode</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@user" href="#@user">@user</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@guest" href="#@guest">@guest</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@wpautop" href="#@wpautop">@wpautop</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@wpautokp" href="#@wpautokp">@wpautokp</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item -level-2"><a class="link title  link-usageacf" href="../usage/acf.html">ACF</a>
+                  </li>
+                  <li class="menu-item -level-2"><a class="link title  link-usagehelpers" href="../usage/helpers.html">Helpers</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="body page-usagewordpress">
+        <div class="header-nav">
+          <div class="right"><a class="iconlink" href="https://github.com/log1x/sage-directives" data-title="log1x/sage-directives">
+              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
+          </div>
+        </div>
+        <div class="markdown-body"><h1 id="wordpress">WordPress</h1>
+<p>The following directives are specific to WordPress core functionality.</p>
+<h2 id="@query">@query</h2>
+<p><code>@query</code> initializes a standard <code>WP_Query</code> as <code>$query</code> and accepts the usual <code>WP_Query</code> <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Parameters">parameters</a> as an array.</p>
+<pre><code class="lang-php">@query([
+  <span class="pl-s">&apos;post_type&apos;</span> =&gt; <span class="pl-s">&apos;post&apos;</span>
+])
+</code></pre>
+<h2 id="@posts">@posts</h2>
+<p><code>@posts</code> begins the post loop and by default, assumes that <code>WP_Query</code> is set to <code>$query</code> (which is the case when using <code>@query</code>). It is wrapped in a <code>have_posts()</code> conditional and thus will return <code>null</code> if no posts are found.</p>
+<p><code>@endposts</code> is available to end your loop and <code>have_posts()</code> conditional as well as resetting your loop with <a href="https://codex.wordpress.org/Function_Reference/wp_reset_postdata"><code>wp_reset_postdata()</code></a>.</p>
+<pre><code class="lang-php">@query([
+  &apos;post_type&apos; =&gt; &apos;post&apos;
+])
+
+@posts
+  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
+  &lt;div class=&quot;entry-content&quot;&gt;
+    @content
+  &lt;/div&gt;
+@endposts
+</code></pre>
+<p>If an instance of <code>WP_Query</code> is passed to <code>@posts</code>, it will use that instead:</p>
+<pre><code class="lang-php">@php
+  $query = new WP_Query([
+    &apos;post_type&apos; =&gt; &apos;post&apos;
+  ]);
+@endphp
+
+@posts($query)
+  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
+  &lt;div class=&quot;entry-content&quot;&gt;
+    @content
+  &lt;/div&gt;
+@endposts
+</code></pre>
+<p>Additionally, you can pass a single post ID, post object, or an array containing a mixture of the two:</p>
+<pre><code class="lang-php">@posts(12)
+  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
+  &lt;div class=&quot;entry-content&quot;&gt;
+    @content
+  &lt;/div&gt;
+@endposts
+  
+@posts(get_post(4))
+  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
+  &lt;div class=&quot;entry-content&quot;&gt;
+    @content
+  &lt;/div&gt;
+@endposts
+  
+@posts([6, get_post(9), 3])
+  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
+  &lt;div class=&quot;entry-content&quot;&gt;
+    @content
+  &lt;/div&gt;
+@endposts
+</code></pre>
+<p>When passing an array of ID&#x2019;s / objects, the posts will be sorted by the order of the array.</p>
+<p>If <code>@query</code> is not used and an argument is not passed to <code>@posts</code>, it will use the main loop from the <code>$wp_query</code> global.</p>
+<h2 id="@title">@title</h2>
+<p><code>@title</code> echo&#x2019;s the current posts title using <a href="https://developer.wordpress.org/reference/functions/get_the_title/"><code>get_the_title()</code></a>.</p>
+<pre><code class="lang-php">@title
+</code></pre>
+<p>To echo the title of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a second parameter:</p>
+<pre><code class="lang-php">@title(<span class="hljs-number">1</span>)
+@title(get_post(<span class="hljs-number">1</span>))
+</code></pre>
+<h2 id="@content">@content</h2>
+<p><code>@content</code> echo&#x2019;s the current posts content using <a href="https://developer.wordpress.org/reference/functions/the_content/"><code>the_content()</code></a>.</p>
+<pre><code class="lang-php">@content
+</code></pre>
+<h2 id="@excerpt">@excerpt</h2>
+<p><code>@excerpt</code> echo&#x2019;s the current posts excerpt using <a href="https://developer.wordpress.org/reference/functions/the_excerpt/"><code>the_excerpt()</code></a>.</p>
+<pre><code class="lang-php">@excerpt
+</code></pre>
+<h2 id="@author">@author</h2>
+<p><code>@author</code> echo&#x2019;s the author of the current posts display name.</p>
+<pre><code class="lang-php">@author
+</code></pre>
+<p>To echo the display name of a specific author, you can pass the author&#x2019;s ID as a second parameter:</p>
+<pre><code class="lang-php">@author(<span class="hljs-number">1</span>)
+</code></pre>
+<h2 id="@authorurl">@authorurl</h2>
+<p><code>@authorurl</code> echo&#x2019;s the author of the current posts archive URL.</p>
+<pre><code class="lang-php">&lt;span class=&quot;author&quot; itemprop=&quot;author&quot; itemscope itemtype=&quot;http://schema.org/Person&quot;&gt;
+  &lt;a href=&quot;@authorurl&quot; itemprop=&quot;url&quot;&gt;
+    &lt;span class=&quot;fn&quot; itemprop=&quot;name&quot; rel=&quot;author&quot;&gt;@author&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/span&gt;
+</code></pre>
+<p>To echo the URL of a specific author, you can pass the author&#x2019;s ID as a second parameter:</p>
+<pre><code class="lang-php">&lt;a href=<span class="pl-s">&quot;@authorurl&quot;</span>&gt;@author&lt;/a&gt;
+</code></pre>
+<h2 id="@published">@published</h2>
+<p><code>@published</code> echo&#x2019;s the current posts published date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p>
+<pre><code class="lang-php">@published
+</code></pre>
+<p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time">formatting of the date</a>, you can pass it as the first parameter:</p>
+<pre><code class="lang-php">&lt;time class=&quot;entry-time&quot;&gt;
+  &lt;span&gt;@published(&apos;F j, Y&apos;)&lt;/span&gt;
+  &lt;span itemprop=&quot;datePublished&quot; content=&quot;@published(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
+&lt;/time&gt;
+</code></pre>
+<p>To echo the published date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p>
+<pre><code class="lang-php">@published(<span class="hljs-number">1</span>)
+@published(get_post(<span class="hljs-number">1</span>))
+</code></pre>
+<p>To format the published date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p>
+<pre><code class="lang-php">@published(<span class="pl-s">&apos;F j, Y&apos;</span>, <span class="hljs-number">1</span>)
+@published(<span class="pl-s">&apos;F j, Y&apos;</span>, get_post(<span class="hljs-number">1</span>))
+</code></pre>
+<h2 id="@modified">@modified</h2>
+<p><code>@modified</code> is similar to <code>@published</code>, but instead echo&#x2019;s the current posts last modified date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p>
+<pre><code class="lang-php">@modified
+</code></pre>
+<p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time">formatting of the date</a>, you can pass it as the first parameter:</p>
+<pre><code class="lang-php">&lt;time class=&quot;entry-time&quot;&gt;
+  &lt;span&gt;@published(&apos;F j, Y&apos;)&lt;/span&gt;
+  &lt;span itemprop=&quot;datePublished&quot; content=&quot;@published(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
+  &lt;span itemprop=&quot;dateModified&quot; class=&quot;updated&quot; content=&quot;@modified(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
+&lt;/time&gt;
+</code></pre>
+<p>To echo the modified date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p>
+<pre><code class="lang-php">@modified(<span class="hljs-number">1</span>)
+@modified(get_post(<span class="hljs-number">1</span>))
+</code></pre>
+<p>To format the modified date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p>
+<pre><code class="lang-php">@modified(<span class="pl-s">&apos;F j, Y&apos;</span>, <span class="hljs-number">1</span>)
+@modified(<span class="pl-s">&apos;F j, Y&apos;</span>, get_post(<span class="hljs-number">1</span>))
+</code></pre>
+<h2 id="@shortcode">@shortcode</h2>
+<p><code>@shortcode</code> echo&#x2019;s the specified shortcode using <a href="https://developer.wordpress.org/reference/functions/do_shortcode/"><code>do_shortcode()</code></a>.</p>
+<pre><code class="lang-php">@shortcode(<span class="pl-s">&apos;[my-shortcode]&apos;</span>)
+</code></pre>
+<h2 id="@user">@user</h2>
+<p><code>@user</code> is a simple <code>is_user_logged_in()</code> conditional to display specific content only when a user is logged in. It can be closed using <code>@enduser</code>.</p>
+<pre><code class="lang-php">@user
+  You are logged in!
+@enduser
+</code></pre>
+<h2 id="@guest">@guest</h2>
+<p><code>@guest</code> is a simple <code>! is_user_logged_in()</code> conditional to display specific content only when a user is not logged in. It can be closed using <code>@endguest</code>.</p>
+<pre><code class="lang-php">@guest
+  You must be &lt;a href=<span class="pl-s">&quot;/wp-login.php&quot;</span>&gt;logged in&lt;/a&gt; to view this content.
+@endguest
+</code></pre>
+<h2 id="@wpautop">@wpautop</h2>
+<p><code>@wpautop</code> runs a passed string through <a href="https://codex.wordpress.org/Function_Reference/wpautop"><code>wpautop()</code></a> and echo&#x2019;s the output.</p>
+<pre><code class="lang-php">@wpautop($content)
+</code></pre>
+<h2 id="@wpautokp">@wpautokp</h2>
+<p><code>@wpautokp</code> does the same as <code>@wpautop</code> but also sanitizes the string with <a href="https://codex.wordpress.org/Function_Reference/wp_kses_post"><code>wp_kses_post()</code></a>.</p>
+<pre><code class="lang-php">@wpautokp($content)
+</code></pre>
+
+        </div>
+        <div class="footer-nav">
+          <div class="left"><a href="../index.html"><span class="title">Sage Directives</span></a></div>
+          <div class="right"><a href="../usage/acf.html"><span class="label">Next: </span><span class="title">ACF</span></a></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
