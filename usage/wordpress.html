@@ -104,7 +104,7 @@
 @endposts
 </code></pre>
 <p>If an instance of <code>WP_Query</code> is passed to <code>@posts</code>, it will use that instead:</p>
-<pre><code class="lang-phpp">@php
+<pre><code class="lang-php">@php
   $query = new WP_Query([
     &apos;post_type&apos; =&gt; &apos;post&apos;
   ]);
@@ -118,7 +118,7 @@
 @endposts
 </code></pre>
 <p>Additionally, you can pass a single post ID, post object, or an array containing a mixture of the two:</p>
-<pre><code class="lang-phpp">@posts(12)
+<pre><code class="lang-php">@posts(12)
   &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
   &lt;div class=&quot;entry-content&quot;&gt;
     @content
