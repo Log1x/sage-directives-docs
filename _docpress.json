@@ -76,6 +76,16 @@
                 "id": "@excerpt"
               },
               {
+                "title": "@permalink",
+                "depth": 2,
+                "id": "@permalink"
+              },
+              {
+                "title": "@thumbnail",
+                "depth": 2,
+                "id": "@thumbnail"
+              },
+              {
                 "title": "@author",
                 "depth": 2,
                 "id": "@author"
@@ -96,9 +106,34 @@
                 "id": "@modified"
               },
               {
+                "title": "@category",
+                "depth": 2,
+                "id": "@category"
+              },
+              {
+                "title": "@categories",
+                "depth": 2,
+                "id": "@categories"
+              },
+              {
+                "title": "@term",
+                "depth": 2,
+                "id": "@term"
+              },
+              {
+                "title": "@terms",
+                "depth": 2,
+                "id": "@terms"
+              },
+              {
                 "title": "@shortcode",
                 "depth": 2,
                 "id": "@shortcode"
+              },
+              {
+                "title": "@role",
+                "depth": 2,
+                "id": "@role"
               },
               {
                 "title": "@user",
@@ -370,6 +405,16 @@
           "id": "@excerpt"
         },
         {
+          "title": "@permalink",
+          "depth": 2,
+          "id": "@permalink"
+        },
+        {
+          "title": "@thumbnail",
+          "depth": 2,
+          "id": "@thumbnail"
+        },
+        {
           "title": "@author",
           "depth": 2,
           "id": "@author"
@@ -390,9 +435,34 @@
           "id": "@modified"
         },
         {
+          "title": "@category",
+          "depth": 2,
+          "id": "@category"
+        },
+        {
+          "title": "@categories",
+          "depth": 2,
+          "id": "@categories"
+        },
+        {
+          "title": "@term",
+          "depth": 2,
+          "id": "@term"
+        },
+        {
+          "title": "@terms",
+          "depth": 2,
+          "id": "@terms"
+        },
+        {
           "title": "@shortcode",
           "depth": 2,
           "id": "@shortcode"
+        },
+        {
+          "title": "@role",
+          "depth": 2,
+          "id": "@role"
         },
         {
           "title": "@user",
@@ -597,8 +667,8 @@
     "docs/mix-manifest.json": "mix-manifest.json",
     "docs/dist/styles/main.css": "dist/styles/main.css",
     "docs/assets/styles/main.scss": "assets/styles/main.scss",
-    "docs/assets/styles/config/mixins.scss": "assets/styles/config/mixins.scss",
     "docs/assets/styles/config/fonts.scss": "assets/styles/config/fonts.scss",
+    "docs/assets/styles/config/mixins.scss": "assets/styles/config/mixins.scss",
     "docs/assets/styles/config/variables.scss": "assets/styles/config/variables.scss",
     "docs/assets/styles/partials/docs.scss": "assets/styles/partials/docs.scss"
   }

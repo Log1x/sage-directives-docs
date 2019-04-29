@@ -31,6 +31,10 @@
                       </li>
                       <li class="heading-item -depth-2"><a class="hlink link-@excerpt" href="#@excerpt">@excerpt</a>
                       </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@permalink" href="#@permalink">@permalink</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@thumbnail" href="#@thumbnail">@thumbnail</a>
+                      </li>
                       <li class="heading-item -depth-2"><a class="hlink link-@author" href="#@author">@author</a>
                       </li>
                       <li class="heading-item -depth-2"><a class="hlink link-@authorurl" href="#@authorurl">@authorurl</a>
@@ -39,7 +43,17 @@
                       </li>
                       <li class="heading-item -depth-2"><a class="hlink link-@modified" href="#@modified">@modified</a>
                       </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@category" href="#@category">@category</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@categories" href="#@categories">@categories</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@term" href="#@term">@term</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@terms" href="#@terms">@terms</a>
+                      </li>
                       <li class="heading-item -depth-2"><a class="hlink link-@shortcode" href="#@shortcode">@shortcode</a>
+                      </li>
+                      <li class="heading-item -depth-2"><a class="hlink link-@role" href="#@role">@role</a>
                       </li>
                       <li class="heading-item -depth-2"><a class="hlink link-@user" href="#@user">@user</a>
                       </li>
@@ -71,14 +85,14 @@
 <p>The following directives are specific to WordPress core functionality.</p>
 <h2 id="@query">@query</h2>
 <p><code>@query</code> initializes a standard <code>WP_Query</code> as <code>$query</code> and accepts the usual <code>WP_Query</code> <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Parameters">parameters</a> as an array.</p>
-<pre><code class="lang-php">@query([
-  <span class="pl-s">&apos;post_type&apos;</span> =&gt; <span class="pl-s">&apos;post&apos;</span>
+<pre><code class="lang-py">@query([
+  &apos;post_type&apos; =&gt; &apos;post&apos;
 ])
 </code></pre>
 <h2 id="@posts">@posts</h2>
 <p><code>@posts</code> begins the post loop and by default, assumes that <code>WP_Query</code> is set to <code>$query</code> (which is the case when using <code>@query</code>). It is wrapped in a <code>have_posts()</code> conditional and thus will return <code>null</code> if no posts are found.</p>
 <p><code>@endposts</code> is available to end your loop and <code>have_posts()</code> conditional as well as resetting your loop with <a href="https://codex.wordpress.org/Function_Reference/wp_reset_postdata"><code>wp_reset_postdata()</code></a>.</p>
-<pre><code class="lang-php">@query([
+<pre><code class="lang-py">@query([
   &apos;post_type&apos; =&gt; &apos;post&apos;
 ])
 
@@ -90,7 +104,7 @@
 @endposts
 </code></pre>
 <p>If an instance of <code>WP_Query</code> is passed to <code>@posts</code>, it will use that instead:</p>
-<pre><code class="lang-php">@php
+<pre><code class="lang-py">@php
   $query = new WP_Query([
     &apos;post_type&apos; =&gt; &apos;post&apos;
   ]);
@@ -104,7 +118,7 @@
 @endposts
 </code></pre>
 <p>Additionally, you can pass a single post ID, post object, or an array containing a mixture of the two:</p>
-<pre><code class="lang-php">@posts(12)
+<pre><code class="lang-py">@posts(12)
   &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
   &lt;div class=&quot;entry-content&quot;&gt;
     @content
@@ -129,98 +143,175 @@
 <p>If <code>@query</code> is not used and an argument is not passed to <code>@posts</code>, it will use the main loop from the <code>$wp_query</code> global.</p>
 <h2 id="@title">@title</h2>
 <p><code>@title</code> echo&#x2019;s the current posts title using <a href="https://developer.wordpress.org/reference/functions/get_the_title/"><code>get_the_title()</code></a>.</p>
-<pre><code class="lang-php">@title
+<pre><code class="lang-py"><span class="hljs-meta">@title</span>
 </code></pre>
-<p>To echo the title of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a second parameter:</p>
-<pre><code class="lang-php">@title(<span class="hljs-number">1</span>)
-@title(get_post(<span class="hljs-number">1</span>))
+<p>To echo the title of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@title(1)</span>
+<span class="hljs-meta">@title(get_post(1))</span>
 </code></pre>
 <h2 id="@content">@content</h2>
 <p><code>@content</code> echo&#x2019;s the current posts content using <a href="https://developer.wordpress.org/reference/functions/the_content/"><code>the_content()</code></a>.</p>
-<pre><code class="lang-php">@content
+<pre><code class="lang-py"><span class="hljs-meta">@content</span>
 </code></pre>
 <h2 id="@excerpt">@excerpt</h2>
 <p><code>@excerpt</code> echo&#x2019;s the current posts excerpt using <a href="https://developer.wordpress.org/reference/functions/the_excerpt/"><code>the_excerpt()</code></a>.</p>
-<pre><code class="lang-php">@excerpt
+<pre><code class="lang-py"><span class="hljs-meta">@excerpt</span>
+</code></pre>
+<h2 id="@permalink">@permalink</h2>
+<p><code>@permalink</code> echo&#x2019;s the current posts URL using <a href="https://developer.wordpress.org/reference/functions/get_permalink/"><code>get_permalink()</code></a>.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@permalink</span>
+</code></pre>
+<p>To echo the URL of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@permalink(1)</span>
+<span class="hljs-meta">@permalink(get_post(1))</span>
+</code></pre>
+<h2 id="@thumbnail">@thumbnail</h2>
+<p><code>@thumbnail</code> echo&#x2019;s the current posts featured image using <a href="https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/"><code>get_the_post_thumbnail</code></a>. By default, it passes <code>thumbnail</code> as the size.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@thumbnail</span>
+</code></pre>
+<p>To echo the featured image of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as the first parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@thumbnail(1)</span>
+<span class="hljs-meta">@thumbnail(get_post(1))</span>
+</code></pre>
+<p>To echo the featured image with a specific size, you can either pass it as a parameter by it&#x2019;s self, or as the second parameter when a post ID or <code>WP_Post</code> instance is present:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@thumbnail(&apos;full&apos;)</span>
+<span class="hljs-meta">@thumbnail(1, &apos;full&apos;)</span>
+<span class="hljs-meta">@thumbnail(get_post(1), &apos;full&apos;)</span>
+</code></pre>
+<p>To echo the featured image URL (without img markup), you can pass <code>false</code> as the last parameter on any of the above options:</p>
+<pre><code class="lang-py">&lt;img src=<span class="pl-s">&quot;@thumbnail(false)&quot;</span> alt=<span class="pl-s">&quot;My Image&quot;</span> /&gt;
+&lt;img src=<span class="pl-s">&quot;@thumbnail(1, false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&quot;</span> /&gt;
+&lt;img src=<span class="pl-s">&quot;@thumbnail(get_post(1), false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&quot;</span> /&gt;
+&lt;img src=<span class="pl-s">&quot;@thumbnail(&apos;full&apos;, false)&quot;</span> alt=<span class="pl-s">&quot;Full Image&quot;</span> /&gt;
+&lt;img src=<span class="pl-s">&quot;@thumbnail(1, &apos;full&apos;, false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&apos;s Full Image&quot;</span> /&gt;
+&lt;img src=<span class="pl-s">&quot;@thumbnail(get_post(1), &apos;full&apos;, false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&apos;s Full Image&quot;</span> /&gt;
 </code></pre>
 <h2 id="@author">@author</h2>
 <p><code>@author</code> echo&#x2019;s the author of the current posts display name.</p>
-<pre><code class="lang-php">@author
+<pre><code class="lang-py"><span class="hljs-meta">@author</span>
 </code></pre>
-<p>To echo the display name of a specific author, you can pass the author&#x2019;s ID as a second parameter:</p>
-<pre><code class="lang-php">@author(<span class="hljs-number">1</span>)
+<p>To echo the display name of a specific author, you can pass the author&#x2019;s ID as a parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@author(1)</span>
 </code></pre>
 <h2 id="@authorurl">@authorurl</h2>
 <p><code>@authorurl</code> echo&#x2019;s the author of the current posts archive URL.</p>
-<pre><code class="lang-php">&lt;span class=&quot;author&quot; itemprop=&quot;author&quot; itemscope itemtype=&quot;http://schema.org/Person&quot;&gt;
+<pre><code class="lang-py">&lt;span class=&quot;author&quot; itemprop=&quot;author&quot; itemscope itemtype=&quot;http://schema.org/Person&quot;&gt;
   &lt;a href=&quot;@authorurl&quot; itemprop=&quot;url&quot;&gt;
     &lt;span class=&quot;fn&quot; itemprop=&quot;name&quot; rel=&quot;author&quot;&gt;@author&lt;/span&gt;
   &lt;/a&gt;
 &lt;/span&gt;
 </code></pre>
-<p>To echo the URL of a specific author, you can pass the author&#x2019;s ID as a second parameter:</p>
-<pre><code class="lang-php">&lt;a href=<span class="pl-s">&quot;@authorurl&quot;</span>&gt;@author&lt;/a&gt;
+<p>To echo the URL of a specific author, you can pass the author&#x2019;s ID as a parameter:</p>
+<pre><code class="lang-py">&lt;a href=&quot;@authorurl(2)&quot;&gt;@author&lt;/a&gt;
 </code></pre>
 <h2 id="@published">@published</h2>
 <p><code>@published</code> echo&#x2019;s the current posts published date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p>
-<pre><code class="lang-php">@published
+<pre><code class="lang-py"><span class="hljs-meta">@published</span>
 </code></pre>
 <p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time">formatting of the date</a>, you can pass it as the first parameter:</p>
-<pre><code class="lang-php">&lt;time class=&quot;entry-time&quot;&gt;
+<pre><code class="lang-py">&lt;time class=&quot;entry-time&quot;&gt;
   &lt;span&gt;@published(&apos;F j, Y&apos;)&lt;/span&gt;
   &lt;span itemprop=&quot;datePublished&quot; content=&quot;@published(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
 &lt;/time&gt;
 </code></pre>
 <p>To echo the published date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p>
-<pre><code class="lang-php">@published(<span class="hljs-number">1</span>)
-@published(get_post(<span class="hljs-number">1</span>))
+<pre><code class="lang-py"><span class="hljs-meta">@published(1)</span>
+<span class="hljs-meta">@published(get_post(1))</span>
 </code></pre>
 <p>To format the published date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p>
-<pre><code class="lang-php">@published(<span class="pl-s">&apos;F j, Y&apos;</span>, <span class="hljs-number">1</span>)
-@published(<span class="pl-s">&apos;F j, Y&apos;</span>, get_post(<span class="hljs-number">1</span>))
+<pre><code class="lang-py"><span class="hljs-meta">@published(&apos;F j, Y&apos;, 1)</span>
+<span class="hljs-meta">@published(&apos;F j, Y&apos;, get_post(1))</span>
 </code></pre>
 <h2 id="@modified">@modified</h2>
 <p><code>@modified</code> is similar to <code>@published</code>, but instead echo&#x2019;s the current posts last modified date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p>
-<pre><code class="lang-php">@modified
+<pre><code class="lang-py"><span class="hljs-meta">@modified</span>
 </code></pre>
 <p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time">formatting of the date</a>, you can pass it as the first parameter:</p>
-<pre><code class="lang-php">&lt;time class=&quot;entry-time&quot;&gt;
+<pre><code class="lang-py">&lt;time class=&quot;entry-time&quot;&gt;
   &lt;span&gt;@published(&apos;F j, Y&apos;)&lt;/span&gt;
   &lt;span itemprop=&quot;datePublished&quot; content=&quot;@published(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
   &lt;span itemprop=&quot;dateModified&quot; class=&quot;updated&quot; content=&quot;@modified(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
 &lt;/time&gt;
 </code></pre>
 <p>To echo the modified date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p>
-<pre><code class="lang-php">@modified(<span class="hljs-number">1</span>)
-@modified(get_post(<span class="hljs-number">1</span>))
+<pre><code class="lang-py"><span class="hljs-meta">@modified(1)</span>
+<span class="hljs-meta">@modified(get_post(1))</span>
 </code></pre>
 <p>To format the modified date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p>
-<pre><code class="lang-php">@modified(<span class="pl-s">&apos;F j, Y&apos;</span>, <span class="hljs-number">1</span>)
-@modified(<span class="pl-s">&apos;F j, Y&apos;</span>, get_post(<span class="hljs-number">1</span>))
+<pre><code class="lang-py"><span class="hljs-meta">@modified(&apos;F j, Y&apos;, 1)</span>
+<span class="hljs-meta">@modified(&apos;F j, Y&apos;, get_post(1))</span>
+</code></pre>
+<h2 id="@category">@category</h2>
+<p><code>@category</code> echo&#x2019;s the first category of the current post.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@category</span>
+</code></pre>
+<p>To echo the category as a link, pass <code>true</code> as a parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@category(true)</span>
+</code></pre>
+<p>To echo the category of a specific post, pass the post ID as a parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@category(1)</span>
+</code></pre>
+<p>To echo the category of a specific post as a link, pass the post ID as the first parameter, and <code>true</code> as the second parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@category(1, true)</span>
+</code></pre>
+<h2 id="@categories">@categories</h2>
+<p><code>@categories</code> echo&#x2019;s a comma seperated list of the current post&#x2019;s categories.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@categories</span>
+</code></pre>
+<p>To echo the categories of a specific post, pass the post ID as the first parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@categories(1)</span>
+</code></pre>
+<p>Similar to <code>@category</code>, if you would like to return the categories as links, pass <code>true</code> as the first parameter when by it&#x2019;s self, or as the second parameter when a post ID is present:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@categories(true)</span>
+<span class="hljs-meta">@categories(1, true)</span>
+</code></pre>
+<h2 id="@term">@term</h2>
+<p><code>@term</code> echo&#x2019;s the taxonomy term of the current post. If multiple terms are present, it will echo the first term returned in the array.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@term(&apos;genre&apos;)</span>
+</code></pre>
+<p>Similar to <code>@category</code>, if you would like to return the terms of a specific post or as links, you can follow the same syntax, except keeping the taxonomy name as the first parameter:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@term(&apos;genre&apos;, 1)</span>
+<span class="hljs-meta">@term(&apos;genre&apos;, 1, false)</span>
+<span class="hljs-meta">@term(&apos;genre&apos;, false)</span>
+</code></pre>
+<h2 id="@terms">@terms</h2>
+<p><code>@terms</code> echo&#x2019;s a comma seperated list of the taxonomy terms of the current post.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@terms(&apos;genre&apos;)</span>
+</code></pre>
+<p>It accepts the same parameters as <code>@term</code>:</p>
+<pre><code class="lang-py"><span class="hljs-meta">@terms(&apos;genre&apos;, 1)</span>
+<span class="hljs-meta">@terms(&apos;genre&apos;, 1, false)</span>
+<span class="hljs-meta">@terms(&apos;genre&apos;, false)</span>
 </code></pre>
 <h2 id="@shortcode">@shortcode</h2>
 <p><code>@shortcode</code> echo&#x2019;s the specified shortcode using <a href="https://developer.wordpress.org/reference/functions/do_shortcode/"><code>do_shortcode()</code></a>.</p>
-<pre><code class="lang-php">@shortcode(<span class="pl-s">&apos;[my-shortcode]&apos;</span>)
+<pre><code class="lang-py"><span class="hljs-meta">@shortcode(&apos;[my-shortcode]&apos;)</span>
+</code></pre>
+<h2 id="@role">@role</h2>
+<p><code>@role</code> is a simple conditional that allows you to display specific content only to users who are logged in and have a specific role. With <a href="https://codex.wordpress.org/Function_Reference/wp_get_current_user"><code>wp_get_current_user()-&gt;roles</code></a> returning an array of roles in all lowercase, the passed role is automatically lowercased using <code>strtolower</code>. It can be closed using <code>@endrole</code>.</p>
+<pre><code class="lang-py"><span class="hljs-meta">@role(&apos;author&apos;)</span>
+  This content <span class="pl-k">is</span> only displayed to Authors.
+<span class="hljs-meta">@endrole</span>
 </code></pre>
 <h2 id="@user">@user</h2>
 <p><code>@user</code> is a simple <code>is_user_logged_in()</code> conditional to display specific content only when a user is logged in. It can be closed using <code>@enduser</code>.</p>
-<pre><code class="lang-php">@user
-  You are logged in!
-@enduser
+<pre><code class="lang-py"><span class="hljs-meta">@user</span>
+  You are logged <span class="pl-k">in</span>!
+<span class="hljs-meta">@enduser</span>
 </code></pre>
 <h2 id="@guest">@guest</h2>
 <p><code>@guest</code> is a simple <code>! is_user_logged_in()</code> conditional to display specific content only when a user is not logged in. It can be closed using <code>@endguest</code>.</p>
-<pre><code class="lang-php">@guest
-  You must be &lt;a href=<span class="pl-s">&quot;/wp-login.php&quot;</span>&gt;logged in&lt;/a&gt; to view this content.
+<pre><code class="lang-py">@guest
+  You must be &lt;a href=&quot;/wp-login.php&quot;&gt;logged in&lt;/a&gt; to view this content.
 @endguest
 </code></pre>
 <h2 id="@wpautop">@wpautop</h2>
 <p><code>@wpautop</code> runs a passed string through <a href="https://codex.wordpress.org/Function_Reference/wpautop"><code>wpautop()</code></a> and echo&#x2019;s the output.</p>
-<pre><code class="lang-php">@wpautop($content)
+<pre><code class="lang-py"><span class="hljs-meta">@wpautop($content)</span>
 </code></pre>
 <h2 id="@wpautokp">@wpautokp</h2>
 <p><code>@wpautokp</code> does the same as <code>@wpautop</code> but also sanitizes the string with <a href="https://codex.wordpress.org/Function_Reference/wp_kses_post"><code>wp_kses_post()</code></a>.</p>
-<pre><code class="lang-php">@wpautokp($content)
+<pre><code class="lang-py"><span class="hljs-meta">@wpautokp($content)</span>
 </code></pre>
 
         </div>
