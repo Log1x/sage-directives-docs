@@ -71,45 +71,45 @@
 <p>The following directives are for use with Advanced Custom Fields. If ACF is not installed and activated, they will not be initialized.</p>
 <h2 id="@field">@field</h2>
 <p><code>@field</code> echo&#x2019;s the specified field using <code>get_field()</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@field(&apos;text&apos;)</span>
+<pre><code class="lang-php">@field(<span class="pl-s">&apos;text&apos;</span>)
 </code></pre>
 <p>To echo a field for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@field(&apos;text&apos;, 1)</span>
+<pre><code class="lang-php">@field(<span class="pl-s">&apos;text&apos;</span>, <span class="hljs-number">1</span>)
 </code></pre>
 <p>If the field you are echoing is an array, you can pass the array key as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@field(&apos;image&apos;, &apos;url&apos;)</span>
+<pre><code class="lang-php">@field(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;url&apos;</span>)
 </code></pre>
 <p>To echo a field for a specific post that is also an array, you can pass the post ID as a third parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@field(&apos;image&apos;, &apos;url&apos;, 1)</span>
+<pre><code class="lang-php">@field(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;url&apos;</span>, <span class="hljs-number">1</span>)
 </code></pre>
 <h2 id="@hasfield">@hasfield</h2>
 <p><code>@hasfield</code> is a simple conditional checking if the specified field exists and is not empty. It can be closed using <code>@endfield</code>.</p>
-<pre><code class="lang-py">@hasfield(&apos;list&apos;)
+<pre><code class="lang-php">@hasfield(<span class="pl-s">&apos;list&apos;</span>)
   &lt;ul&gt;
-    @fields(&apos;list&apos;)
-      &lt;li&gt;@sub(&apos;item&apos;)&lt;/li&gt;
+    @fields(<span class="pl-s">&apos;list&apos;</span>)
+      &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
     @endfields
   &lt;/ul&gt;
 @endfield
 </code></pre>
 <p>To check the existance of a field for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-py">@hasfield(&apos;list&apos;, 5)
+<pre><code class="lang-php">@hasfield(<span class="pl-s">&apos;list&apos;</span>, <span class="hljs-number">5</span>)
   &lt;ul&gt;
-    @fields(&apos;list&apos;, 5)
-      &lt;li&gt;@sub(&apos;item&apos;)&lt;/li&gt;
+    @fields(<span class="pl-s">&apos;list&apos;</span>, <span class="hljs-number">5</span>)
+      &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
     @fields
   &lt;/ul&gt;
 @endfield
 </code></pre>
 <p>If the field you are checking against is an array, you can pass the array key as a second parameter:</p>
-<pre><code class="lang-py">@hasfield(&apos;image&apos;, &apos;url&apos;)
+<pre><code class="lang-php">@hasfield(&apos;image&apos;, &apos;url&apos;)
   &lt;figure class=&quot;image&quot;&gt;
     &lt;img src=&quot;@field(&apos;image&apos;, &apos;url&apos;)&quot; alt=&quot;@field(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
   &lt;/figure&gt;
 @endfield
 </code></pre>
 <p>To check the existance of a field that is an array for a specific post, you can pass the array key as a second parameter and the post ID as a third parameter:</p>
-<pre><code class="lang-py">@hasfield(&apos;image&apos;, &apos;url&apos;, 1)
+<pre><code class="lang-php">@hasfield(&apos;image&apos;, &apos;url&apos;, 1)
   &lt;figure class=&quot;image&quot;&gt;
     &lt;img src=&quot;@field(&apos;image&apos;, &apos;url&apos;, 1)&quot; alt=&quot;@field(&apos;image&apos;, &apos;alt&apos;, 1)&quot; /&gt;
   &lt;/figure&gt;
@@ -117,50 +117,50 @@
 </code></pre>
 <h2 id="@isfield">@isfield</h2>
 <p><code>@isfield</code> is a simple conditional for checking if your field value equals a specified value. It can be closed using <code>@endfield</code>.</p>
-<pre><code class="lang-py">@isfield(&apos;cta_type&apos;, &apos;phone&apos;)
+<pre><code class="lang-php">@isfield(&apos;cta_type&apos;, &apos;phone&apos;)
   &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
 @endfield
 </code></pre>
 <p>To check the field value of a specific post, you can pass a post ID as a third parameter:</p>
-<pre><code class="lang-py">@isfield(&apos;cta_type&apos;, &apos;phone&apos;, 1)
+<pre><code class="lang-php">@isfield(&apos;cta_type&apos;, &apos;phone&apos;, 1)
   &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
 @endfield
 </code></pre>
 <p>If the field you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p>
-<pre><code class="lang-py">@isfield(&apos;cta&apos;, &apos;type&apos;, &apos;phone&apos;)
+<pre><code class="lang-php">@isfield(&apos;cta&apos;, &apos;type&apos;, &apos;phone&apos;)
   &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
 @endfield
 </code></pre>
 <p>To check the field value of a field that is an array for a specific post, you can pass the array key as a second parameter, the value you are checking against as a third parameter, and the post ID as a fourth parameter:</p>
-<pre><code class="lang-py">@isfield(&apos;cta&apos;, &apos;type&apos;, &apos;phone&apos;, 1)
+<pre><code class="lang-php">@isfield(&apos;cta&apos;, &apos;type&apos;, &apos;phone&apos;, 1)
   &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
 @endfield
 </code></pre>
 <h2 id="@fields">@fields</h2>
 <p><code>@fields</code> acts as a helper for handling repeater fields. It is wrapped with a <a href="https://www.advancedcustomfields.com/resources/have_rows/"><code>have_rows()</code></a> conditional, and if it exists and is not empty, begins the while loop followed by <code>the_row()</code>. It can be closed using <code>@endfields</code>.</p>
-<pre><code class="lang-py">&lt;ul&gt;
-  @fields(&apos;list&apos;)
-    &lt;li&gt;@sub(&apos;item&apos;)&lt;/li&gt;
+<pre><code class="lang-php">&lt;ul&gt;
+  @fields(<span class="pl-s">&apos;list&apos;</span>)
+    &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
   @endfields
 &lt;/ul&gt;
 </code></pre>
 <p>To retrieve fields for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-py">&lt;ul&gt;
-  @fields(&apos;list&apos;, 1)
-    &lt;li&gt;@sub(&apos;item&apos;)&lt;/li&gt;
+<pre><code class="lang-php">&lt;ul&gt;
+  @fields(<span class="pl-s">&apos;list&apos;</span>, <span class="hljs-number">1</span>)
+    &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
   @endfields
 &lt;/ul&gt;
 </code></pre>
 <h2 id="@sub">@sub</h2>
 <p><code>@sub</code> echo&#x2019;s the specified sub field using <a href="https://www.advancedcustomfields.com/resources/get_sub_field/"><code>get_sub_field()</code></a>. It is to be used inside of repeatable fields such as <code>@fields</code>, <code>@layout</code>, <code>@group</code>, and <code>@options</code>.</p>
-<pre><code class="lang-py">&lt;ul&gt;
-  @fields(&apos;list&apos;)
-    &lt;li&gt;@sub(&apos;item&apos;)&lt;/li&gt;
+<pre><code class="lang-php">&lt;ul&gt;
+  @fields(<span class="pl-s">&apos;list&apos;</span>)
+    &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
   @endfields
 &lt;/ul&gt;
 </code></pre>
 <p>If the sub field is an array, you can pass the key(s) as additional parameters:</p>
-<pre><code class="lang-py">&lt;ul class=&quot;slider&quot;&gt;
+<pre><code class="lang-php">&lt;ul class=&quot;slider&quot;&gt;
   @fields(&apos;slides&apos;)
     &lt;li class=&quot;slide&quot;&gt;
       &lt;img src=&quot;@sub(&apos;image&apos;, &apos;url&apos;)&quot; alt=&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
@@ -168,7 +168,7 @@
   @endfields
 &lt;/ul&gt;
 </code></pre>
-<pre><code class="lang-py">&lt;ul class=&quot;slider&quot;&gt;
+<pre><code class="lang-php">&lt;ul class=&quot;slider&quot;&gt;
   @fields(&apos;slides&apos;)
     &lt;li class=&quot;slide&quot;&gt;
       &lt;img src=&quot;@sub(&apos;image&apos;, &apos;sizes&apos;, &apos;thumbnail&apos;)&quot; alt=&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
@@ -179,45 +179,45 @@
 <p>More usage of <code>@sub</code> can be found alongside the examples of the repeatable fields listed above.</p>
 <h2 id="@hassub">@hassub</h2>
 <p><code>@hassub</code> is a simple conditional checking if the specified field exists and is not empty. It can be closed using <code>@endsub</code>.</p>
-<pre><code class="lang-py">@hassub(&apos;icon&apos;)
+<pre><code class="lang-php">@hassub(&apos;icon&apos;)
   &lt;i class=&quot;fas fa-@sub(&apos;icon&apos;)&quot;&gt;&lt;/i&gt;
 @endsub
 </code></pre>
 <p>If the sub field you are checking against is an array, you can pass the key(s) as additional parameters:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@hassub(&apos;image&apos;, &apos;url&apos;)</span>
+<pre><code class="lang-php">@hassub(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;url&apos;</span>)
   &lt;img src=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;url&apos;)&quot;</span> alt=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot;</span> /&gt;
-<span class="hljs-meta">@endsub</span>
+@endsub
 </code></pre>
-<pre><code class="lang-py"><span class="hljs-meta">@hassub(&apos;image&apos;, &apos;sizes&apos;, &apos;thumbnail&apos;)</span>
+<pre><code class="lang-php">@hassub(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;sizes&apos;</span>, <span class="pl-s">&apos;thumbnail&apos;</span>)
   &lt;img src=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;sizes&apos;, &apos;thumbnail&apos;)&quot;</span> alt=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot;</span> /&gt;
-<span class="hljs-meta">@endsub</span>
+@endsub
 </code></pre>
 <h2 id="@issub">@issub</h2>
 <p><code>@issub</code> is a simple conditional for checking if your sub field equals a specified value. It can be closed using <code>@endsub</code>.</p>
-<pre><code class="lang-py">@issub(&apos;icon&apos;, &apos;arrow&apos;)
+<pre><code class="lang-php">@issub(&apos;icon&apos;, &apos;arrow&apos;)
   &lt;i class=&quot;fas fa-arrow-up fa-rotate-90&quot;&gt;&lt;/i&gt;
 @endsub
 </code></pre>
 <p>If the sub field you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p>
-<pre><code class="lang-py">@issub(&apos;icon&apos;, &apos;name&apos;, &apos;arrow&apos;)
+<pre><code class="lang-php">@issub(&apos;icon&apos;, &apos;name&apos;, &apos;arrow&apos;)
   &lt;i class=&quot;fas fa-@sub(&apos;icon&apos;, &apos;value&apos;) fa-rotate-90&quot;&gt;&lt;/i&gt;
 @endsub
 </code></pre>
 <h2 id="@layouts">@layouts</h2>
 <p><code>@layouts</code> acts as a helper for handling flexible content fields. Under the hood, it is essentially the exact same as <code>@fields</code>, but is provided to allow for a more clean, readable code-base in conjunction with <code>@layout</code> which calls <code>get_row_layout()</code>. It can be closed using <code>@endlayouts</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@layouts(&apos;components&apos;)</span>
+<pre><code class="lang-php">@layouts(<span class="pl-s">&apos;components&apos;</span>)
   [...]
-<span class="hljs-meta">@endlayouts</span>
+@endlayouts
 </code></pre>
 <p>To retrieve layouts for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@layouts(&apos;components&apos;, 1)</span>
+<pre><code class="lang-php">@layouts(<span class="pl-s">&apos;components&apos;</span>, <span class="hljs-number">1</span>)
   [...]
-<span class="hljs-meta">@endlayouts</span>
+@endlayouts
 </code></pre>
 <h2 id="@layout">@layout</h2>
 <p><code>@layout</code> serves as a conditional checking if <code>get_row_layout()</code> equals the specified value during the <code>have_rows()</code> while loop.</p>
 <p>Using <code>@layouts</code>, this allows you to have a rather clean view when displaying your flexible content components. It can be closed using <code>@endlayout</code>.</p>
-<pre><code class="lang-py">@layouts(&apos;components&apos;)
+<pre><code class="lang-php">@layouts(&apos;components&apos;)
   @layout(&apos;card&apos;)
     &lt;div class=&quot;card&quot;&gt;
       @hassub(&apos;image&apos;)
@@ -255,7 +255,7 @@
 </code></pre>
 <h2 id="@group">@group</h2>
 <p><code>@group</code> acts as a helper for handling grouped fields. Under the hood, it is essentially the exact same as <code>@fields</code> and thus serves as a simple alias for code readability purposes. Which one you prefer is entirely up to you. It can be closed using <code>@endgroup</code>.</p>
-<pre><code class="lang-py">@group(&apos;button&apos;)
+<pre><code class="lang-php">@group(&apos;button&apos;)
   @hassub(&apos;url&apos;)
     &lt;a href=&quot;@sub(&apos;url&apos;)&quot; class=&quot;button button--@sub(&apos;color&apos;)&quot;&gt;
       @sub(&apos;label&apos;)
@@ -264,7 +264,7 @@
 @endgroup
 </code></pre>
 <p>To retrieve a group for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-py">@group(&apos;button&apos;, 1)
+<pre><code class="lang-php">@group(&apos;button&apos;, 1)
   @hassub(&apos;url&apos;)
     &lt;a href=&quot;@sub(&apos;url&apos;)&quot; class=&quot;button button--@sub(&apos;color&apos;)&quot;&gt;
       @sub(&apos;label&apos;)
@@ -274,10 +274,10 @@
 </code></pre>
 <h2 id="@option">@option</h2>
 <p><code>@option</code> echo&#x2019;s the specified theme options field using <code>get_field($field, &apos;option&apos;)</code>.</p>
-<pre><code class="lang-py">Find us on &lt;a href=&quot;@option(&apos;facebook_url&apos;)&quot; target=&quot;_blank&quot;&gt;Facebook&lt;/a&gt;
+<pre><code class="lang-php">Find us on &lt;a href=<span class="pl-s">&quot;@option(&apos;facebook_url&apos;)&quot;</span> target=<span class="pl-s">&quot;_blank&quot;</span>&gt;Facebook&lt;/a&gt;
 </code></pre>
 <p>If the option is an array, you can pass the key as a second parameter:</p>
-<pre><code class="lang-py">&lt;div class=&quot;navbar-brand&quot;&gt;
+<pre><code class="lang-php">&lt;div class=&quot;navbar-brand&quot;&gt;
   &lt;a class=&quot;navbar-item&quot; href=&quot;{{ home_url() }}&quot;&gt;
     &lt;img src=&quot;@option(&apos;logo&apos;, &apos;url&apos;)&quot; alt=&quot;{{ get_bloginfo(&apos;name&apos;, &apos;display&apos;) }}&quot; /&gt;
   &lt;/a&gt;
@@ -285,12 +285,12 @@
 </code></pre>
 <h2 id="@hasoption">@hasoption</h2>
 <p><code>@hasoption</code> is a simple conditional checking if the specified theme option field exists and is not empty. It can be closed using <code>@endoption</code>.</p>
-<pre><code class="lang-py">@hasoption(&apos;facebook_url&apos;)
-  Find us on &lt;a href=&quot;@option(&apos;facebook_url&apos;)&quot; target=&quot;_blank&quot;&gt;Facebook&lt;/a&gt;
+<pre><code class="lang-php">@hasoption(<span class="pl-s">&apos;facebook_url&apos;</span>)
+  Find us on &lt;a href=<span class="pl-s">&quot;@option(&apos;facebook_url&apos;)&quot;</span> target=<span class="pl-s">&quot;_blank&quot;</span>&gt;Facebook&lt;/a&gt;
 @endoption
 </code></pre>
 <p>If the option you are checking against is an array, you can pass the array key as a second parameter:</p>
-<pre><code class="lang-py">@hasoption(&apos;facebook&apos;, &apos;url&apos;)
+<pre><code class="lang-php">@hasoption(&apos;facebook&apos;, &apos;url&apos;)
   &lt;a href=&quot;@option(&apos;facebook&apos;, &apos;url&apos;)&quot; target=&quot;_blank&quot;&gt;
     @hasoption(&apos;facebook&apos;, &apos;icon&apos;)
       &lt;span class=&quot;icon&quot;&gt;
@@ -304,18 +304,18 @@
 </code></pre>
 <h2 id="@isoption">@isoption</h2>
 <p><code>@isoption</code> is a simple conditional for checking if your theme option field equals a specified value. It can be closed using <code>@endoption</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isoption(&apos;logo_type&apos;, &apos;image&apos;)</span>
+<pre><code class="lang-php">@isoption(<span class="pl-s">&apos;logo_type&apos;</span>, <span class="pl-s">&apos;image&apos;</span>)
   &lt;img src=<span class="pl-s">&quot;@option(&apos;logo&apos;)&quot;</span> alt=<span class="pl-s">&quot;{{ get_bloginfo(&apos;name&apos;, &apos;display&apos;) }}&quot;</span> /&gt;
-<span class="hljs-meta">@endoption</span>
+@endoption
 </code></pre>
 <p>If the option you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isoption(&apos;logo&apos;, &apos;type&apos;, &apos;image&apos;)</span>
+<pre><code class="lang-php">@isoption(<span class="pl-s">&apos;logo&apos;</span>, <span class="pl-s">&apos;type&apos;</span>, <span class="pl-s">&apos;image&apos;</span>)
   &lt;img src=<span class="pl-s">&quot;@option(&apos;logo&apos;, &apos;url&apos;)&quot;</span> alt=<span class="pl-s">&quot;{{ get_bloginfo(&apos;name&apos;, &apos;display&apos;) }}&quot;</span> /&gt;
-<span class="hljs-meta">@endoption</span>
+@endoption
 </code></pre>
 <h2 id="@options">@options</h2>
 <p><code>@options</code> acts as a helper for handling repeater and group fields within&#x2019; your theme options. Under the hood, it is essentially the exact same as <code>@fields</code> and <code>@group</code> except it automatically has the theme options ID <code>&apos;option&apos;</code> passed to it. It can be closed using <code>@endoptions</code>.</p>
-<pre><code class="lang-py">@hasoption(&apos;social&apos;)
+<pre><code class="lang-php">@hasoption(&apos;social&apos;)
   &lt;ul class=&quot;social&quot;&gt;
     @options(&apos;social&apos;)
       &lt;li&gt;

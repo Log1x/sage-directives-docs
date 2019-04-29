@@ -77,108 +77,108 @@
 <p>The following directives are generalized helpers in an attempt to avoid using <code>@php</code> and <code>@endphp</code> where it isn&#x2019;t absolutely necessary.</p>
 <h2 id="@istrue">@istrue</h2>
 <p><code>@istrue</code> is a simple conditional that displays the specified output if the parameter passed exists and returns true. It can be closed using <code>@endistrue</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@istrue($variable)</span>
+<pre><code class="lang-php">@istrue($variable)
   Hello World
-<span class="hljs-meta">@endistrue</span>
+@endistrue
 </code></pre>
 <p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@istrue($variable, &apos;Hello World&apos;)</span>
+<pre><code class="lang-php">@istrue($variable, <span class="pl-s">&apos;Hello World&apos;</span>)
 </code></pre>
 <h2 id="@isfalse">@isfalse</h2>
 <p><code>@isfalse</code> is a simple conditional that displays the specified output if the parameter passed exists but returns false. It can be closed using <code>@endisfalse</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isfalse($variable)</span>
+<pre><code class="lang-php">@isfalse($variable)
   Goodbye World
-<span class="hljs-meta">@endistrue</span>
+@endistrue
 </code></pre>
 <p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isfalse($variable, &apos;Goodbye World&apos;)</span>
+<pre><code class="lang-php">@isfalse($variable, <span class="pl-s">&apos;Goodbye World&apos;</span>)
 </code></pre>
 <h2 id="@isnull">@isnull</h2>
 <p><code>@isnull</code> is a simple conditional that displays the specified output if the parameter passed is null. It can be closed using <code>@endisnull</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isnull($variable)</span>
-  There <span class="pl-k">is</span> nothing here.
-<span class="hljs-meta">@endisnull</span>
+<pre><code class="lang-php">@isnull($variable)
+  There is nothing here.
+@endisnull
 </code></pre>
 <p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isnull($variable, &apos;There is nothing here.&apos;)</span>
+<pre><code class="lang-php">@isnull($variable, <span class="pl-s">&apos;There is nothing here.&apos;</span>)
 </code></pre>
 <h2 id="@isnotnull">@isnotnull</h2>
 <p><code>@isnotnull</code> is a simple conditional that displays the specified output if the parameter passed exists and is not null. It can be closed using <code>@endisnotnull</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isnotnull($variable)</span>
-  There <span class="pl-k">is</span> something here.
-<span class="hljs-meta">@endisnull</span>
+<pre><code class="lang-php">@isnotnull($variable)
+  There is something here.
+@endisnull
 </code></pre>
 <p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-py"><span class="hljs-meta">@isnotnull($variable, &apos;There is something here.&apos;)</span>
+<pre><code class="lang-php">@isnotnull($variable, <span class="pl-s">&apos;There is something here.&apos;</span>)
 </code></pre>
 <h2 id="@instanceof">@instanceof</h2>
 <p><code>@instanceof</code> checks if the first parameter is an instance of the second parameter. It can be closed using <code>@endinstanceof</code>.</p>
-<pre><code class="lang-py">@instanceof($post, &apos;WP_Post&apos;)
+<pre><code class="lang-php">@<span class="pl-k">instanceof</span>($post, <span class="pl-s">&apos;WP_Post&apos;</span>)
   The post ID is {{ $post-&gt;ID }}.
 @endinstanceof
 </code></pre>
 <h2 id="@typeof">@typeof</h2>
 <p><code>@typeof</code> checks if the first parameter is of a specified type. It can be closed using <code>@endtypeof</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@typeof(14, &apos;integer&apos;)</span>
-  This <span class="pl-k">is</span> a whole number.
-<span class="hljs-meta">@endtypeof</span>
+<pre><code class="lang-php">@typeof(<span class="hljs-number">14</span>, <span class="pl-s">&apos;integer&apos;</span>)
+  This is a whole number.
+@endtypeof
 </code></pre>
 <h2 id="@global">@global</h2>
 <p><code>@global</code> globals the specified variable.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@global($post)</span>
+<pre><code class="lang-php">@<span class="pl-k">global</span>($post)
 </code></pre>
 <h2 id="@set">@set</h2>
 <p><code>@set</code> sets the specifed variable to a specified value.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@set($hello, &apos;world&apos;)</span>
+<pre><code class="lang-php">@set($hello, <span class="pl-s">&apos;world&apos;</span>)
 </code></pre>
 <h2 id="@unset">@unset</h2>
 <p><code>@unset</code> unsets the specified variable.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@unset($hello)</span>
+<pre><code class="lang-php">@<span class="pl-k">unset</span>($hello)
 </code></pre>
 <h2 id="@extract">@extract</h2>
 <p><code>@extract</code> extracts the passed array into variables. This can be useful for making views customizable when passing parameters to <code>@include</code> but also having default values set within&#x2019; the view.</p>
-<pre><code class="lang-py">// single.blade.php
-@include(&apos;components.entry-meta&apos;, [
-  &apos;author&apos; =&gt; false,
-  &apos;date&apos;   =&gt; true,
+<pre><code class="lang-php"><span class="pl-c">// single.blade.php</span>
+@<span class="pl-k">include</span>(<span class="pl-s">&apos;components.entry-meta&apos;</span>, [
+  <span class="pl-s">&apos;author&apos;</span> =&gt; <span class="pl-k">false</span>,
+  <span class="pl-s">&apos;date&apos;</span>   =&gt; <span class="pl-k">true</span>,
 ])
 
-// entry-meta.blade.php
+<span class="pl-c">// entry-meta.blade.php</span>
 @extract([
-  &apos;author&apos; =&gt; $author ?? true,
-  &apos;date&apos;   =&gt; $date   ?? true
+  <span class="pl-s">&apos;author&apos;</span> =&gt; $author ?? <span class="pl-k">true</span>,
+  <span class="pl-s">&apos;date&apos;</span>   =&gt; $date   ?? <span class="pl-k">true</span>
 ])
 
-@if ($author)
+@<span class="pl-k">if</span> ($author)
   [...]
-@endif
+@<span class="pl-k">endif</span>
 
-@if ($date)
+@<span class="pl-k">if</span> ($date)
   [...]
-@endif
+@<span class="pl-k">endif</span>
 </code></pre>
 <h2 id="@implode">@implode</h2>
 <p><code>@implode</code> echo&#x2019;s a string containing a representation of each element within&#x2019; the array passed to it with a glue string between each element.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@implode(&apos;, &apos; [&apos;dog&apos;, &apos;cat&apos;, &apos;mouse&apos;, &apos;snake&apos;])</span>
-// dog, cat, mouse, snake
+<pre><code class="lang-php">@implode(<span class="pl-s">&apos;, &apos;</span> [<span class="pl-s">&apos;dog&apos;</span>, <span class="pl-s">&apos;cat&apos;</span>, <span class="pl-s">&apos;mouse&apos;</span>, <span class="pl-s">&apos;snake&apos;</span>])
+<span class="pl-c">// dog, cat, mouse, snake</span>
 </code></pre>
 <h2 id="@repeat">@repeat</h2>
 <p><code>@repeat</code> repeats its contents a specified number of times. It can be closed using <code>@endrepeat</code>.</p>
-<pre><code class="lang-py">&lt;ul&gt;
-  @repeat(5)
+<pre><code class="lang-php">&lt;ul&gt;
+  @repeat(<span class="hljs-number">5</span>)
     &lt;li&gt;{{ $loop-&gt;iteration }}&lt;/li&gt;
   @endrepeat
 &lt;/ul&gt;
 </code></pre>
 <p>Similar to Laravel&#x2019;s native looping, a <code>$loop</code> variable is available inside of <code>@repeat</code>:</p>
-<pre><code class="lang-py">@repeat(5)
-  @if ($loop-&gt;first)
+<pre><code class="lang-php">@repeat(<span class="hljs-number">5</span>)
+  @<span class="pl-k">if</span> ($loop-&gt;first)
     This is the first iteration.
-  @endif
+  @<span class="pl-k">endif</span>
   
-  @if ($loop-&gt;last)
+  @<span class="pl-k">if</span> ($loop-&gt;last)
     This is the last iteration.
-  @endif
+  @<span class="pl-k">endif</span>
   
   This is iteration {{ $loop-&gt;iteration }} out of $loop-&gt;count. 
   There are {{ $loop-&gt;remaining }} iterations left.
@@ -187,43 +187,43 @@
 </code></pre>
 <h2 id="@style">@style</h2>
 <p><code>@style</code> allows you to quickly inline a block of CSS or define a path to a stylesheet. When being used for inline CSS, it can be closed using <code>@endstyle</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@style</span>
+<pre><code class="lang-php">@style
   .button {
     background-color: LightGreen;
     color: white;
     padding: <span class="hljs-number">0.75</span>rem <span class="hljs-number">1</span>rem;
   }
-<span class="hljs-meta">@endstyle</span>
+@endstyle
   
-<span class="hljs-meta">@style(&apos;/path/to/style.css&apos;)</span>
+@style(<span class="pl-s">&apos;/path/to/style.css&apos;</span>)
 </code></pre>
 <h2 id="@script">@script</h2>
 <p><code>@script</code> allows you to quickly inline a block of Javascript or define a path to a script. When being used for inline JS, it can be closed using <code>@endscript</code>.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@script</span>
+<pre><code class="lang-php">@script
   console.log(<span class="pl-s">&apos;Hello World&apos;</span>)
-<span class="hljs-meta">@endscript</span>
+@endscript
   
-<span class="hljs-meta">@script(&apos;/path/to/script.js&apos;)</span>
+@script(<span class="pl-s">&apos;/path/to/script.js&apos;</span>)
 </code></pre>
 <h2 id="@js">@js</h2>
 <p><code>@js</code> allows you to declare inline Javascript variables similar to <a href="https://developer.wordpress.org/reference/functions/wp_add_inline_script/">wp_add_inline_script()</a>. The passed value can be in the form of a string or an array.</p>
-<pre><code class="lang-py">@js(&apos;hello&apos;, &apos;world&apos;)
+<pre><code class="lang-php">@js(<span class="pl-s">&apos;hello&apos;</span>, <span class="pl-s">&apos;world&apos;</span>)
   
-// &lt;script&gt;
-//   window.hello = &apos;world&apos;;
-// &lt;/script&gt;
+<span class="pl-c">// &lt;script&gt;</span>
+<span class="pl-c">//   window.hello = &apos;world&apos;;</span>
+<span class="pl-c">// &lt;/script&gt;</span>
 </code></pre>
 <h2 id="@inline">@inline</h2>
 <p><code>@inline</code> loads the contents of a CSS, JS, or HTML file inline into your view and wraps the content with the proper HTML tag depending on the file extension. By default, the path is set to your current theme directory.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@inline(&apos;dist/styles/critical.css&apos;)</span>
+<pre><code class="lang-php">@inline(<span class="pl-s">&apos;dist/styles/critical.css&apos;</span>)
 </code></pre>
 <h2 id="@fa">@fa</h2>
 <p><code>@fa</code> and its related directives serve as helpers for quickly outputting Font Awesome icons. <code>@fa</code> is for Font Awesome 4, while <code>@fas</code>, <code>@far</code>, <code>@fal</code>, and <code>@fab</code> are for their corrosponding Font Awesome 5 variation.</p>
-<pre><code class="lang-py"><span class="hljs-meta">@fa(&apos;arrow-up&apos;, &apos;optional-css-classes&apos;)</span>
-<span class="hljs-meta">@fas(&apos;arrow-down&apos;, &apos;optional-css-classes&apos;)</span>
-<span class="hljs-meta">@far(&apos;arrow-left&apos;, &apos;optional-css-classes&apos;)</span>
-<span class="hljs-meta">@fal(&apos;arrow-right&apos;, &apos;optional-css-classes&apos;)</span>
-<span class="hljs-meta">@fab(&apos;twitter&apos;, &apos;optional-css-classes&apos;)</span>
+<pre><code class="lang-php">@fa(<span class="pl-s">&apos;arrow-up&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
+@fas(<span class="pl-s">&apos;arrow-down&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
+@far(<span class="pl-s">&apos;arrow-left&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
+@fal(<span class="pl-s">&apos;arrow-right&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
+@fab(<span class="pl-s">&apos;twitter&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
 </code></pre>
 
         </div>
