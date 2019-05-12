@@ -1,236 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/style.css?t=90051322">
-    <link rel="stylesheet" href="../dist/styles/main.css?t=cabfb525">
-    <script src="../assets/script.js?t=93f1a66c"></script>
-    <title>Helpers - Sage Directives</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Helpers | Sage Directives</title>
+    <meta name="description" content="Empower your Roots Sage workflow">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet" type="text/css">
+    
+    <link rel="preload" href="/assets/css/0.styles.93f57443.css" as="style"><link rel="preload" href="/assets/js/app.e6553320.js" as="script"><link rel="preload" href="/assets/js/6.36f2feb4.js" as="script"><link rel="prefetch" href="/assets/js/2.d8f505d4.js"><link rel="prefetch" href="/assets/js/3.088e282e.js"><link rel="prefetch" href="/assets/js/4.13c88ee5.js"><link rel="prefetch" href="/assets/js/5.2215a1af.js"><link rel="prefetch" href="/assets/js/7.0fc8e456.js"><link rel="prefetch" href="/assets/js/8.dde3f876.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.93f57443.css">
   </head>
-  <body class="-menu-visible">
-    <div class="doc-layout">
-      <div class="toggle menu-toggle js-menu-toggle"></div>
-      <div class="menu toc-menu">
-        <ul>
-          <li class="menu-item -level-0 -parent">
-            <ul class="submenu">
-              <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Sage Directives</a>
-              </li>
-              <li class="menu-item -level-1 -parent"><span class="title">Usage</span>
-                <ul class="submenu">
-                  <li class="menu-item -level-2"><a class="link title  link-usagewordpress" href="../usage/wordpress.html">WordPress</a>
-                  </li>
-                  <li class="menu-item -level-2"><a class="link title  link-usageacf" href="../usage/acf.html">ACF</a>
-                  </li>
-                  <li class="menu-item -level-2"><a class="link title -active link-usagehelpers" href="../usage/helpers.html">Helpers</a>
-                    <ul class="headings heading-list">
-                      <li class="heading-item -depth-2"><a class="hlink link-@istrue" href="#@istrue">@istrue</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@isfalse" href="#@isfalse">@isfalse</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@isnull" href="#@isnull">@isnull</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@isnotnull" href="#@isnotnull">@isnotnull</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@instanceof" href="#@instanceof">@instanceof</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@typeof" href="#@typeof">@typeof</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@global" href="#@global">@global</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@set" href="#@set">@set</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@unset" href="#@unset">@unset</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@extract" href="#@extract">@extract</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@implode" href="#@implode">@implode</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@repeat" href="#@repeat">@repeat</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@style" href="#@style">@style</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@script" href="#@script">@script</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@js" href="#@js">@js</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@inline" href="#@inline">@inline</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@fa" href="#@fa">@fa</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="body page-usagehelpers">
-        <div class="header-nav">
-          <div class="right"><a class="iconlink" href="https://github.com/log1x/sage-directives" data-title="log1x/sage-directives">
-              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
-          </div>
-        </div>
-        <div class="markdown-body"><h1 id="helpers">Helpers</h1>
-<p>The following directives are generalized helpers in an attempt to avoid using <code>@php</code> and <code>@endphp</code> where it isn&#x2019;t absolutely necessary.</p>
-<h2 id="@istrue">@istrue</h2>
-<p><code>@istrue</code> is a simple conditional that displays the specified output if the parameter passed exists and returns true. It can be closed using <code>@endistrue</code>.</p>
-<pre><code class="lang-php">@istrue($variable)
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sage Directives</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://discourse.roots.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Discourse
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://discourse.roots.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Discourse
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Getting Started</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/installation.html" class="sidebar-link">Installation</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Usage</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/usage/wordpress.html" class="sidebar-link">WordPress</a></li><li><a href="/usage/acf.html" class="sidebar-link">ACF</a></li><li><a href="/usage/helpers.html" class="active sidebar-link">Helpers</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/usage/helpers.html#istrue" class="sidebar-link">@istrue</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#isfalse" class="sidebar-link">@isfalse</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#isnull" class="sidebar-link">@isnull</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#isnotnull" class="sidebar-link">@isnotnull</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#instanceof" class="sidebar-link">@instanceof</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#typeof" class="sidebar-link">@typeof</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#global" class="sidebar-link">@global</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#set" class="sidebar-link">@set</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#unset" class="sidebar-link">@unset</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#extract" class="sidebar-link">@extract</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#implode" class="sidebar-link">@implode</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#repeat" class="sidebar-link">@repeat</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#style" class="sidebar-link">@style</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#script" class="sidebar-link">@script</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#js" class="sidebar-link">@js</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#inline" class="sidebar-link">@inline</a></li><li class="sidebar-sub-header"><a href="/usage/helpers.html#fa" class="sidebar-link">@fa</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="helpers"><a href="#helpers" aria-hidden="true" class="header-anchor">#</a> Helpers</h1> <p>The following directives are generalized helpers in an attempt to avoid using <code>@php</code> and <code>@endphp</code> where it isn't absolutely necessary.</p> <h2 id="istrue"><a href="#istrue" aria-hidden="true" class="header-anchor">#</a> @istrue</h2> <p><code>@istrue</code> is a simple conditional that displays the specified output if the parameter passed exists and returns true. It can be closed using <code>@endistrue</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">istrue</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">)</span>
   Hello World
 @endistrue
-</code></pre>
-<p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-php">@istrue($variable, <span class="pl-s">&apos;Hello World&apos;</span>)
-</code></pre>
-<h2 id="@isfalse">@isfalse</h2>
-<p><code>@isfalse</code> is a simple conditional that displays the specified output if the parameter passed exists but returns false. It can be closed using <code>@endisfalse</code>.</p>
-<pre><code class="lang-php">@isfalse($variable)
+</code></pre></div><p>Alternatively, you can pass the output as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">istrue</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'Hello World'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="isfalse"><a href="#isfalse" aria-hidden="true" class="header-anchor">#</a> @isfalse</h2> <p><code>@isfalse</code> is a simple conditional that displays the specified output if the parameter passed exists but returns false. It can be closed using <code>@endisfalse</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isfalse</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">)</span>
   Goodbye World
 @endistrue
-</code></pre>
-<p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-php">@isfalse($variable, <span class="pl-s">&apos;Goodbye World&apos;</span>)
-</code></pre>
-<h2 id="@isnull">@isnull</h2>
-<p><code>@isnull</code> is a simple conditional that displays the specified output if the parameter passed is null. It can be closed using <code>@endisnull</code>.</p>
-<pre><code class="lang-php">@isnull($variable)
-  There is nothing here.
+</code></pre></div><p>Alternatively, you can pass the output as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isfalse</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'Goodbye World'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="isnull"><a href="#isnull" aria-hidden="true" class="header-anchor">#</a> @isnull</h2> <p><code>@isnull</code> is a simple conditional that displays the specified output if the parameter passed is null. It can be closed using <code>@endisnull</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isnull</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">)</span>
+  There is nothing here<span class="token punctuation">.</span>
 @endisnull
-</code></pre>
-<p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-php">@isnull($variable, <span class="pl-s">&apos;There is nothing here.&apos;</span>)
-</code></pre>
-<h2 id="@isnotnull">@isnotnull</h2>
-<p><code>@isnotnull</code> is a simple conditional that displays the specified output if the parameter passed exists and is not null. It can be closed using <code>@endisnotnull</code>.</p>
-<pre><code class="lang-php">@isnotnull($variable)
-  There is something here.
+</code></pre></div><p>Alternatively, you can pass the output as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isnull</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'There is nothing here.'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="isnotnull"><a href="#isnotnull" aria-hidden="true" class="header-anchor">#</a> @isnotnull</h2> <p><code>@isnotnull</code> is a simple conditional that displays the specified output if the parameter passed exists and is not null. It can be closed using <code>@endisnotnull</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isnotnull</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">)</span>
+  There is something here<span class="token punctuation">.</span>
 @endisnull
-</code></pre>
-<p>Alternatively, you can pass the output as a second parameter:</p>
-<pre><code class="lang-php">@isnotnull($variable, <span class="pl-s">&apos;There is something here.&apos;</span>)
-</code></pre>
-<h2 id="@instanceof">@instanceof</h2>
-<p><code>@instanceof</code> checks if the first parameter is an instance of the second parameter. It can be closed using <code>@endinstanceof</code>.</p>
-<pre><code class="lang-php">@<span class="pl-k">instanceof</span>($post, <span class="pl-s">&apos;WP_Post&apos;</span>)
-  The post ID is {{ $post-&gt;ID }}.
+</code></pre></div><p>Alternatively, you can pass the output as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isnotnull</span><span class="token punctuation">(</span><span class="token variable">$variable</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'There is something here.'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="instanceof"><a href="#instanceof" aria-hidden="true" class="header-anchor">#</a> @instanceof</h2> <p><code>@instanceof</code> checks if the first parameter is an instance of the second parameter. It can be closed using <code>@endinstanceof</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token keyword">instanceof</span><span class="token punctuation">(</span><span class="token variable">$post</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'WP_Post'</span><span class="token punctuation">)</span>
+  The post <span class="token constant">ID</span> is <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$post</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">ID</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">.</span>
 @endinstanceof
-</code></pre>
-<h2 id="@typeof">@typeof</h2>
-<p><code>@typeof</code> checks if the first parameter is of a specified type. It can be closed using <code>@endtypeof</code>.</p>
-<pre><code class="lang-php">@typeof(<span class="hljs-number">14</span>, <span class="pl-s">&apos;integer&apos;</span>)
-  This is a whole number.
+</code></pre></div><h2 id="typeof"><a href="#typeof" aria-hidden="true" class="header-anchor">#</a> @typeof</h2> <p><code>@typeof</code> checks if the first parameter is of a specified type. It can be closed using <code>@endtypeof</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">typeof</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'integer'</span><span class="token punctuation">)</span>
+  This is a whole number<span class="token punctuation">.</span>
 @endtypeof
-</code></pre>
-<h2 id="@global">@global</h2>
-<p><code>@global</code> globals the specified variable.</p>
-<pre><code class="lang-php">@<span class="pl-k">global</span>($post)
-</code></pre>
-<h2 id="@set">@set</h2>
-<p><code>@set</code> sets the specifed variable to a specified value.</p>
-<pre><code class="lang-php">@set($hello, <span class="pl-s">&apos;world&apos;</span>)
-</code></pre>
-<h2 id="@unset">@unset</h2>
-<p><code>@unset</code> unsets the specified variable.</p>
-<pre><code class="lang-php">@<span class="pl-k">unset</span>($hello)
-</code></pre>
-<h2 id="@extract">@extract</h2>
-<p><code>@extract</code> extracts the passed array into variables. This can be useful for making views customizable when passing parameters to <code>@include</code> but also having default values set within&#x2019; the view.</p>
-<pre><code class="lang-php"><span class="pl-c">// single.blade.php</span>
-@<span class="pl-k">include</span>(<span class="pl-s">&apos;components.entry-meta&apos;</span>, [
-  <span class="pl-s">&apos;author&apos;</span> =&gt; <span class="pl-k">false</span>,
-  <span class="pl-s">&apos;date&apos;</span>   =&gt; <span class="pl-k">true</span>,
-])
+</code></pre></div><h2 id="global"><a href="#global" aria-hidden="true" class="header-anchor">#</a> @global</h2> <p><code>@global</code> globals the specified variable.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token keyword">global</span><span class="token punctuation">(</span><span class="token variable">$post</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="set"><a href="#set" aria-hidden="true" class="header-anchor">#</a> @set</h2> <p><code>@set</code> sets the specifed variable to a specified value.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">set</span><span class="token punctuation">(</span><span class="token variable">$hello</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'world'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="unset"><a href="#unset" aria-hidden="true" class="header-anchor">#</a> @unset</h2> <p><code>@unset</code> unsets the specified variable.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token keyword">unset</span><span class="token punctuation">(</span><span class="token variable">$hello</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="extract"><a href="#extract" aria-hidden="true" class="header-anchor">#</a> @extract</h2> <p><code>@extract</code> extracts the passed array into variables. This can be useful for making views customizable when passing parameters to <code>@include</code> but also having default values set within' the view.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token comment">// single.blade.php</span>
+@<span class="token keyword">include</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'components.entry-meta'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'author'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">false</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'date'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-<span class="pl-c">// entry-meta.blade.php</span>
-@extract([
-  <span class="pl-s">&apos;author&apos;</span> =&gt; $author ?? <span class="pl-k">true</span>,
-  <span class="pl-s">&apos;date&apos;</span>   =&gt; $date   ?? <span class="pl-k">true</span>
-])
+<span class="token comment">// entry-meta.blade.php</span>
+@<span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'author'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$author</span> <span class="token operator">?</span><span class="token operator">?</span> <span class="token boolean constant">true</span><span class="token punctuation">,</span>
+  <span class="token single-quoted-string string">'date'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$date</span>   <span class="token operator">?</span><span class="token operator">?</span> <span class="token boolean constant">true</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-@<span class="pl-k">if</span> ($author)
-  [...]
-@<span class="pl-k">endif</span>
+@<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$author</span><span class="token punctuation">)</span>
+  <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+@<span class="token keyword">endif</span>
 
-@<span class="pl-k">if</span> ($date)
-  [...]
-@<span class="pl-k">endif</span>
-</code></pre>
-<h2 id="@implode">@implode</h2>
-<p><code>@implode</code> echo&#x2019;s a string containing a representation of each element within&#x2019; the array passed to it with a glue string between each element.</p>
-<pre><code class="lang-php">@implode(<span class="pl-s">&apos;, &apos;</span> [<span class="pl-s">&apos;dog&apos;</span>, <span class="pl-s">&apos;cat&apos;</span>, <span class="pl-s">&apos;mouse&apos;</span>, <span class="pl-s">&apos;snake&apos;</span>])
-<span class="pl-c">// dog, cat, mouse, snake</span>
-</code></pre>
-<h2 id="@repeat">@repeat</h2>
-<p><code>@repeat</code> repeats its contents a specified number of times. It can be closed using <code>@endrepeat</code>.</p>
-<pre><code class="lang-php">&lt;ul&gt;
-  @repeat(<span class="hljs-number">5</span>)
-    &lt;li&gt;{{ $loop-&gt;iteration }}&lt;/li&gt;
+@<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$date</span><span class="token punctuation">)</span>
+  <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+@<span class="token keyword">endif</span>
+</code></pre></div><h2 id="implode"><a href="#implode" aria-hidden="true" class="header-anchor">#</a> @implode</h2> <p><code>@implode</code> echo's a string containing a representation of each element within' the array passed to it with a glue string between each element.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">implode</span><span class="token punctuation">(</span><span class="token single-quoted-string string">', '</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'dog'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'cat'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'mouse'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'snake'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">// dog, cat, mouse, snake</span>
+</code></pre></div><h2 id="repeat"><a href="#repeat" aria-hidden="true" class="header-anchor">#</a> @repeat</h2> <p><code>@repeat</code> repeats its contents a specified number of times. It can be closed using <code>@endrepeat</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  @<span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">iteration</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
   @endrepeat
-&lt;/ul&gt;
-</code></pre>
-<p>Similar to Laravel&#x2019;s native looping, a <code>$loop</code> variable is available inside of <code>@repeat</code>:</p>
-<pre><code class="lang-php">@repeat(<span class="hljs-number">5</span>)
-  @<span class="pl-k">if</span> ($loop-&gt;first)
-    This is the first iteration.
-  @<span class="pl-k">endif</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><p>Similar to Laravel's native looping, a <code>$loop</code> variable is available inside of <code>@repeat</code>:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">repeat</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+  @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">first</span><span class="token punctuation">)</span>
+    This is the first iteration<span class="token punctuation">.</span>
+  @<span class="token keyword">endif</span>
   
-  @<span class="pl-k">if</span> ($loop-&gt;last)
-    This is the last iteration.
-  @<span class="pl-k">endif</span>
+  @<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">last</span><span class="token punctuation">)</span>
+    This is the last iteration<span class="token punctuation">.</span>
+  @<span class="token keyword">endif</span>
   
-  This is iteration {{ $loop-&gt;iteration }} out of $loop-&gt;count. 
-  There are {{ $loop-&gt;remaining }} iterations left.
-  The current iteration index is {{ $loop-&gt;index }}
+  This is iteration <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">iteration</span> <span class="token punctuation">}</span><span class="token punctuation">}</span> out of <span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">count</span><span class="token punctuation">.</span> 
+  There are <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">remaining</span> <span class="token punctuation">}</span><span class="token punctuation">}</span> iterations left<span class="token punctuation">.</span>
+  The current iteration index is <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token variable">$loop</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">index</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
 @endrepeat
-</code></pre>
-<h2 id="@style">@style</h2>
-<p><code>@style</code> allows you to quickly inline a block of CSS or define a path to a stylesheet. When being used for inline CSS, it can be closed using <code>@endstyle</code>.</p>
-<pre><code class="lang-php">@style
-  .button {
-    background-color: LightGreen;
-    color: white;
-    padding: <span class="hljs-number">0.75</span>rem <span class="hljs-number">1</span>rem;
-  }
+</code></pre></div><h2 id="style"><a href="#style" aria-hidden="true" class="header-anchor">#</a> @style</h2> <p><code>@style</code> allows you to quickly inline a block of CSS or define a path to a stylesheet. When being used for inline CSS, it can be closed using <code>@endstyle</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@style
+  <span class="token punctuation">.</span>button <span class="token punctuation">{</span>
+    background<span class="token operator">-</span>color<span class="token punctuation">:</span> LightGreen<span class="token punctuation">;</span>
+    color<span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+    padding<span class="token punctuation">:</span> <span class="token number">0.75</span>rem <span class="token number">1</span>rem<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
 @endstyle
   
-@style(<span class="pl-s">&apos;/path/to/style.css&apos;</span>)
-</code></pre>
-<h2 id="@script">@script</h2>
-<p><code>@script</code> allows you to quickly inline a block of Javascript or define a path to a script. When being used for inline JS, it can be closed using <code>@endscript</code>.</p>
-<pre><code class="lang-php">@script
-  console.log(<span class="pl-s">&apos;Hello World&apos;</span>)
+@<span class="token function">style</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'/path/to/style.css'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="script"><a href="#script" aria-hidden="true" class="header-anchor">#</a> @script</h2> <p><code>@script</code> allows you to quickly inline a block of Javascript or define a path to a script. When being used for inline JS, it can be closed using <code>@endscript</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@script
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'Hello World'</span><span class="token punctuation">)</span>
 @endscript
   
-@script(<span class="pl-s">&apos;/path/to/script.js&apos;</span>)
-</code></pre>
-<h2 id="@js">@js</h2>
-<p><code>@js</code> allows you to declare inline Javascript variables similar to <a href="https://developer.wordpress.org/reference/functions/wp_add_inline_script/">wp_add_inline_script()</a>. The passed value can be in the form of a string or an array.</p>
-<pre><code class="lang-php">@js(<span class="pl-s">&apos;hello&apos;</span>, <span class="pl-s">&apos;world&apos;</span>)
+@<span class="token function">script</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'/path/to/script.js'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="js"><a href="#js" aria-hidden="true" class="header-anchor">#</a> @js</h2> <p><code>@js</code> allows you to declare inline Javascript variables similar to <a href="https://developer.wordpress.org/reference/functions/wp_add_inline_script/" target="_blank" rel="noopener noreferrer">wp_add_inline_script()<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. The passed value can be in the form of a string or an array.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">js</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'hello'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'world'</span><span class="token punctuation">)</span>
   
-<span class="pl-c">// &lt;script&gt;</span>
-<span class="pl-c">//   window.hello = &apos;world&apos;;</span>
-<span class="pl-c">// &lt;/script&gt;</span>
-</code></pre>
-<h2 id="@inline">@inline</h2>
-<p><code>@inline</code> loads the contents of a CSS, JS, or HTML file inline into your view and wraps the content with the proper HTML tag depending on the file extension. By default, the path is set to your current theme directory.</p>
-<pre><code class="lang-php">@inline(<span class="pl-s">&apos;dist/styles/critical.css&apos;</span>)
-</code></pre>
-<h2 id="@fa">@fa</h2>
-<p><code>@fa</code> and its related directives serve as helpers for quickly outputting Font Awesome icons. <code>@fa</code> is for Font Awesome 4, while <code>@fas</code>, <code>@far</code>, <code>@fal</code>, and <code>@fab</code> are for their corrosponding Font Awesome 5 variation.</p>
-<pre><code class="lang-php">@fa(<span class="pl-s">&apos;arrow-up&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
-@fas(<span class="pl-s">&apos;arrow-down&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
-@far(<span class="pl-s">&apos;arrow-left&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
-@fal(<span class="pl-s">&apos;arrow-right&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
-@fab(<span class="pl-s">&apos;twitter&apos;</span>, <span class="pl-s">&apos;optional-css-classes&apos;</span>)
-</code></pre>
-
-        </div>
-        <div class="footer-nav">
-          <div class="left"><a href="../usage/acf.html"><span class="title">ACF</span></a></div>
-        </div>
-      </div>
-    </div>
+<span class="token comment">// &lt;script&gt;</span>
+<span class="token comment">//   window.hello = 'world';</span>
+<span class="token comment">// &lt;/script&gt;</span>
+</code></pre></div><h2 id="inline"><a href="#inline" aria-hidden="true" class="header-anchor">#</a> @inline</h2> <p><code>@inline</code> loads the contents of a CSS, JS, or HTML file inline into your view and wraps the content with the proper HTML tag depending on the file extension. By default, the path is set to your current theme directory.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">inline</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'dist/styles/critical.css'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="fa"><a href="#fa" aria-hidden="true" class="header-anchor">#</a> @fa</h2> <p><code>@fa</code> and its related directives serve as helpers for quickly outputting Font Awesome icons. <code>@fa</code> is for Font Awesome 4, while <code>@fas</code>, <code>@far</code>, <code>@fal</code>, and <code>@fab</code> are for their corrosponding Font Awesome 5 variation.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">fa</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'arrow-up'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'optional-css-classes'</span><span class="token punctuation">)</span>
+@<span class="token function">fas</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'arrow-down'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'optional-css-classes'</span><span class="token punctuation">)</span>
+@<span class="token function">far</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'arrow-left'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'optional-css-classes'</span><span class="token punctuation">)</span>
+@<span class="token function">fal</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'arrow-right'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'optional-css-classes'</span><span class="token punctuation">)</span>
+@<span class="token function">fab</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'twitter'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'optional-css-classes'</span><span class="token punctuation">)</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/usage/acf.html" class="prev">
+          ACF
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.e6553320.js" defer></script><script src="/assets/js/6.36f2feb4.js" defer></script>
   </body>
 </html>

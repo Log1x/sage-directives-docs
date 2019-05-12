@@ -1,344 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/style.css?t=90051322">
-    <link rel="stylesheet" href="../dist/styles/main.css?t=cabfb525">
-    <script src="../assets/script.js?t=93f1a66c"></script>
-    <title>ACF - Sage Directives</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ACF | Sage Directives</title>
+    <meta name="description" content="Empower your Roots Sage workflow">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet" type="text/css">
+    
+    <link rel="preload" href="/assets/css/0.styles.93f57443.css" as="style"><link rel="preload" href="/assets/js/app.e6553320.js" as="script"><link rel="preload" href="/assets/js/5.2215a1af.js" as="script"><link rel="prefetch" href="/assets/js/2.d8f505d4.js"><link rel="prefetch" href="/assets/js/3.088e282e.js"><link rel="prefetch" href="/assets/js/4.13c88ee5.js"><link rel="prefetch" href="/assets/js/6.36f2feb4.js"><link rel="prefetch" href="/assets/js/7.0fc8e456.js"><link rel="prefetch" href="/assets/js/8.dde3f876.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.93f57443.css">
   </head>
-  <body class="-menu-visible">
-    <div class="doc-layout">
-      <div class="toggle menu-toggle js-menu-toggle"></div>
-      <div class="menu toc-menu">
-        <ul>
-          <li class="menu-item -level-0 -parent">
-            <ul class="submenu">
-              <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Sage Directives</a>
-              </li>
-              <li class="menu-item -level-1 -parent"><span class="title">Usage</span>
-                <ul class="submenu">
-                  <li class="menu-item -level-2"><a class="link title  link-usagewordpress" href="../usage/wordpress.html">WordPress</a>
-                  </li>
-                  <li class="menu-item -level-2"><a class="link title -active link-usageacf" href="../usage/acf.html">ACF</a>
-                    <ul class="headings heading-list">
-                      <li class="heading-item -depth-2"><a class="hlink link-@field" href="#@field">@field</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@hasfield" href="#@hasfield">@hasfield</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@isfield" href="#@isfield">@isfield</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@fields" href="#@fields">@fields</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@sub" href="#@sub">@sub</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@hassub" href="#@hassub">@hassub</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@issub" href="#@issub">@issub</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@layouts" href="#@layouts">@layouts</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@layout" href="#@layout">@layout</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@group" href="#@group">@group</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@option" href="#@option">@option</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@hasoption" href="#@hasoption">@hasoption</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@isoption" href="#@isoption">@isoption</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@options" href="#@options">@options</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item -level-2"><a class="link title  link-usagehelpers" href="../usage/helpers.html">Helpers</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="body page-usageacf">
-        <div class="header-nav">
-          <div class="right"><a class="iconlink" href="https://github.com/log1x/sage-directives" data-title="log1x/sage-directives">
-              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
-          </div>
-        </div>
-        <div class="markdown-body"><h1 id="acf">ACF</h1>
-<p>The following directives are for use with Advanced Custom Fields. If ACF is not installed and activated, they will not be initialized.</p>
-<h2 id="@field">@field</h2>
-<p><code>@field</code> echo&#x2019;s the specified field using <code>get_field()</code>.</p>
-<pre><code class="lang-php">@field(<span class="pl-s">&apos;text&apos;</span>)
-</code></pre>
-<p>To echo a field for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-php">@field(<span class="pl-s">&apos;text&apos;</span>, <span class="hljs-number">1</span>)
-</code></pre>
-<p>If the field you are echoing is an array, you can pass the array key as a second parameter:</p>
-<pre><code class="lang-php">@field(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;url&apos;</span>)
-</code></pre>
-<p>To echo a field for a specific post that is also an array, you can pass the post ID as a third parameter:</p>
-<pre><code class="lang-php">@field(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;url&apos;</span>, <span class="hljs-number">1</span>)
-</code></pre>
-<h2 id="@hasfield">@hasfield</h2>
-<p><code>@hasfield</code> is a simple conditional checking if the specified field exists and is not empty. It can be closed using <code>@endfield</code>.</p>
-<pre><code class="lang-php">@hasfield(<span class="pl-s">&apos;list&apos;</span>)
-  &lt;ul&gt;
-    @fields(<span class="pl-s">&apos;list&apos;</span>)
-      &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sage Directives</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://discourse.roots.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Discourse
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://discourse.roots.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Discourse
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Getting Started</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/installation.html" class="sidebar-link">Installation</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Usage</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/usage/wordpress.html" class="sidebar-link">WordPress</a></li><li><a href="/usage/acf.html" class="active sidebar-link">ACF</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/usage/acf.html#field" class="sidebar-link">@field</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#hasfield" class="sidebar-link">@hasfield</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#isfield" class="sidebar-link">@isfield</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#fields" class="sidebar-link">@fields</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#sub" class="sidebar-link">@sub</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#hassub" class="sidebar-link">@hassub</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#issub" class="sidebar-link">@issub</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#layouts" class="sidebar-link">@layouts</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#layout" class="sidebar-link">@layout</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#group" class="sidebar-link">@group</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#option" class="sidebar-link">@option</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#hasoption" class="sidebar-link">@hasoption</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#isoption" class="sidebar-link">@isoption</a></li><li class="sidebar-sub-header"><a href="/usage/acf.html#options" class="sidebar-link">@options</a></li></ul></li><li><a href="/usage/helpers.html" class="sidebar-link">Helpers</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="acf"><a href="#acf" aria-hidden="true" class="header-anchor">#</a> ACF</h1> <p>The following directives are for use with Advanced Custom Fields. If ACF is not installed and activated, they will not be initialized.</p> <h2 id="field"><a href="#field" aria-hidden="true" class="header-anchor">#</a> @field</h2> <p><code>@field</code> echo's the specified field using <code>get_field()</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">field</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'text'</span><span class="token punctuation">)</span>
+</code></pre></div><p>To echo a field for a specific post, you can pass a post ID as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">field</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'text'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><p>If the field you are echoing is an array, you can pass the array key as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">field</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+</code></pre></div><p>To echo a field for a specific post that is also an array, you can pass the post ID as a third parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">field</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'url'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="hasfield"><a href="#hasfield" aria-hidden="true" class="header-anchor">#</a> @hasfield</h2> <p><code>@hasfield</code> is a simple conditional checking if the specified field exists and is not empty. It can be closed using <code>@endfield</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+    @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'item'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
     @endfields
-  &lt;/ul&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<p>To check the existance of a field for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-php">@hasfield(<span class="pl-s">&apos;list&apos;</span>, <span class="hljs-number">5</span>)
-  &lt;ul&gt;
-    @fields(<span class="pl-s">&apos;list&apos;</span>, <span class="hljs-number">5</span>)
-      &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
-    @fields
-  &lt;/ul&gt;
+</code></pre></div><p>To check the existance of a field for a specific post, you can pass a post ID as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+    @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'item'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+    @endfield
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<p>If the field you are checking against is an array, you can pass the array key as a second parameter:</p>
-<pre><code class="lang-php">@hasfield(&apos;image&apos;, &apos;url&apos;)
-  &lt;figure class=&quot;image&quot;&gt;
-    &lt;img src=&quot;@field(&apos;image&apos;, &apos;url&apos;)&quot; alt=&quot;@field(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
-  &lt;/figure&gt;
+</code></pre></div><p>If the field you are checking against is an array, you can pass the array key as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>figure <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;image&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@field('image', 'url')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@field('image', 'alt')&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>figure<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<p>To check the existance of a field that is an array for a specific post, you can pass the array key as a second parameter and the post ID as a third parameter:</p>
-<pre><code class="lang-php">@hasfield(&apos;image&apos;, &apos;url&apos;, 1)
-  &lt;figure class=&quot;image&quot;&gt;
-    &lt;img src=&quot;@field(&apos;image&apos;, &apos;url&apos;, 1)&quot; alt=&quot;@field(&apos;image&apos;, &apos;alt&apos;, 1)&quot; /&gt;
-  &lt;/figure&gt;
+</code></pre></div><p>To check the existance of a field that is an array for a specific post, you can pass the array key as a second parameter and the post ID as a third parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'url'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>figure <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;image&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@field('image', 'url', 1)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@field('image', 'alt', 1)&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>figure<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<h2 id="@isfield">@isfield</h2>
-<p><code>@isfield</code> is a simple conditional for checking if your field value equals a specified value. It can be closed using <code>@endfield</code>.</p>
-<pre><code class="lang-php">@isfield(&apos;cta_type&apos;, &apos;phone&apos;)
-  &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+</code></pre></div><h2 id="isfield"><a href="#isfield" aria-hidden="true" class="header-anchor">#</a> @isfield</h2> <p><code>@isfield</code> is a simple conditional for checking if your field value equals a specified value. It can be closed using <code>@endfield</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'cta_type'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'phone'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-phone&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<p>To check the field value of a specific post, you can pass a post ID as a third parameter:</p>
-<pre><code class="lang-php">@isfield(&apos;cta_type&apos;, &apos;phone&apos;, 1)
-  &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+</code></pre></div><p>To check the field value of a specific post, you can pass a post ID as a third parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'cta_type'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'phone'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-phone&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<p>If the field you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p>
-<pre><code class="lang-php">@isfield(&apos;cta&apos;, &apos;type&apos;, &apos;phone&apos;)
-  &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+</code></pre></div><p>If the field you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'cta'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'type'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'phone'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-phone&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<p>To check the field value of a field that is an array for a specific post, you can pass the array key as a second parameter, the value you are checking against as a third parameter, and the post ID as a fourth parameter:</p>
-<pre><code class="lang-php">@isfield(&apos;cta&apos;, &apos;type&apos;, &apos;phone&apos;, 1)
-  &lt;i class=&quot;fas fa-phone&quot;&gt;&lt;/i&gt;
+</code></pre></div><p>To check the field value of a field that is an array for a specific post, you can pass the array key as a second parameter, the value you are checking against as a third parameter, and the post ID as a fourth parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isfield</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'cta'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'type'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'phone'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-phone&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endfield
-</code></pre>
-<h2 id="@fields">@fields</h2>
-<p><code>@fields</code> acts as a helper for handling repeater fields. It is wrapped with a <a href="https://www.advancedcustomfields.com/resources/have_rows/"><code>have_rows()</code></a> conditional, and if it exists and is not empty, begins the while loop followed by <code>the_row()</code>. It can be closed using <code>@endfields</code>.</p>
-<pre><code class="lang-php">&lt;ul&gt;
-  @fields(<span class="pl-s">&apos;list&apos;</span>)
-    &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
+</code></pre></div><h2 id="fields"><a href="#fields" aria-hidden="true" class="header-anchor">#</a> @fields</h2> <p><code>@fields</code> acts as a helper for handling repeater fields. It is wrapped with a <a href="https://www.advancedcustomfields.com/resources/have_rows/" target="_blank" rel="noopener noreferrer"><code>have_rows()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> conditional, and if it exists and is not empty, begins the while loop followed by <code>the_row()</code>. It can be closed using <code>@endfields</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'item'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
   @endfields
-&lt;/ul&gt;
-</code></pre>
-<p>To retrieve fields for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-php">&lt;ul&gt;
-  @fields(<span class="pl-s">&apos;list&apos;</span>, <span class="hljs-number">1</span>)
-    &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><p>To retrieve fields for a specific post, you can pass a post ID as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'item'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
   @endfields
-&lt;/ul&gt;
-</code></pre>
-<h2 id="@sub">@sub</h2>
-<p><code>@sub</code> echo&#x2019;s the specified sub field using <a href="https://www.advancedcustomfields.com/resources/get_sub_field/"><code>get_sub_field()</code></a>. It is to be used inside of repeatable fields such as <code>@fields</code>, <code>@layout</code>, <code>@group</code>, and <code>@options</code>.</p>
-<pre><code class="lang-php">&lt;ul&gt;
-  @fields(<span class="pl-s">&apos;list&apos;</span>)
-    &lt;li&gt;@sub(<span class="pl-s">&apos;item&apos;</span>)&lt;/li&gt;
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="sub"><a href="#sub" aria-hidden="true" class="header-anchor">#</a> @sub</h2> <p><code>@sub</code> echo's the specified sub field using <a href="https://www.advancedcustomfields.com/resources/get_sub_field/" target="_blank" rel="noopener noreferrer"><code>get_sub_field()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. It is to be used inside of repeatable fields such as <code>@fields</code>, <code>@layout</code>, <code>@group</code>, and <code>@options</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+  @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'list'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'item'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
   @endfields
-&lt;/ul&gt;
-</code></pre>
-<p>If the sub field is an array, you can pass the key(s) as additional parameters:</p>
-<pre><code class="lang-php">&lt;ul class=&quot;slider&quot;&gt;
-  @fields(&apos;slides&apos;)
-    &lt;li class=&quot;slide&quot;&gt;
-      &lt;img src=&quot;@sub(&apos;image&apos;, &apos;url&apos;)&quot; alt=&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
-    &lt;/li&gt;
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><p>If the sub field is an array, you can pass the key(s) as additional parameters:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>ul <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;slider&quot;</span><span class="token operator">&gt;</span>
+  @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'slides'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>li <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;slide&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'url')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'alt')&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
   @endfields
-&lt;/ul&gt;
-</code></pre>
-<pre><code class="lang-php">&lt;ul class=&quot;slider&quot;&gt;
-  @fields(&apos;slides&apos;)
-    &lt;li class=&quot;slide&quot;&gt;
-      &lt;img src=&quot;@sub(&apos;image&apos;, &apos;sizes&apos;, &apos;thumbnail&apos;)&quot; alt=&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
-    &lt;/li&gt;
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>ul <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;slider&quot;</span><span class="token operator">&gt;</span>
+  @<span class="token function">fields</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'slides'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>li <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;slide&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'sizes', 'thumbnail')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'alt')&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
   @endfields
-&lt;/ul&gt;
-</code></pre>
-<p>More usage of <code>@sub</code> can be found alongside the examples of the repeatable fields listed above.</p>
-<h2 id="@hassub">@hassub</h2>
-<p><code>@hassub</code> is a simple conditional checking if the specified field exists and is not empty. It can be closed using <code>@endsub</code>.</p>
-<pre><code class="lang-php">@hassub(&apos;icon&apos;)
-  &lt;i class=&quot;fas fa-@sub(&apos;icon&apos;)&quot;&gt;&lt;/i&gt;
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><p>More usage of <code>@sub</code> can be found alongside the examples of the repeatable fields listed above.</p> <h2 id="hassub"><a href="#hassub" aria-hidden="true" class="header-anchor">#</a> @hassub</h2> <p><code>@hassub</code> is a simple conditional checking if the specified field exists and is not empty. It can be closed using <code>@endsub</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'icon'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-@sub('icon')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endsub
-</code></pre>
-<p>If the sub field you are checking against is an array, you can pass the key(s) as additional parameters:</p>
-<pre><code class="lang-php">@hassub(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;url&apos;</span>)
-  &lt;img src=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;url&apos;)&quot;</span> alt=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot;</span> /&gt;
+</code></pre></div><p>If the sub field you are checking against is an array, you can pass the key(s) as additional parameters:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'url')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'alt')&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
 @endsub
-</code></pre>
-<pre><code class="lang-php">@hassub(<span class="pl-s">&apos;image&apos;</span>, <span class="pl-s">&apos;sizes&apos;</span>, <span class="pl-s">&apos;thumbnail&apos;</span>)
-  &lt;img src=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;sizes&apos;, &apos;thumbnail&apos;)&quot;</span> alt=<span class="pl-s">&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot;</span> /&gt;
+</code></pre></div><div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'sizes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'thumbnail'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'sizes', 'thumbnail')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'alt')&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
 @endsub
-</code></pre>
-<h2 id="@issub">@issub</h2>
-<p><code>@issub</code> is a simple conditional for checking if your sub field equals a specified value. It can be closed using <code>@endsub</code>.</p>
-<pre><code class="lang-php">@issub(&apos;icon&apos;, &apos;arrow&apos;)
-  &lt;i class=&quot;fas fa-arrow-up fa-rotate-90&quot;&gt;&lt;/i&gt;
+</code></pre></div><h2 id="issub"><a href="#issub" aria-hidden="true" class="header-anchor">#</a> @issub</h2> <p><code>@issub</code> is a simple conditional for checking if your sub field equals a specified value. It can be closed using <code>@endsub</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">issub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'icon'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'arrow'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-arrow-up fa-rotate-90&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endsub
-</code></pre>
-<p>If the sub field you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p>
-<pre><code class="lang-php">@issub(&apos;icon&apos;, &apos;name&apos;, &apos;arrow&apos;)
-  &lt;i class=&quot;fas fa-@sub(&apos;icon&apos;, &apos;value&apos;) fa-rotate-90&quot;&gt;&lt;/i&gt;
+</code></pre></div><p>If the sub field you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">issub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'icon'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'arrow'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-@sub('icon', 'value') fa-rotate-90&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
 @endsub
-</code></pre>
-<h2 id="@layouts">@layouts</h2>
-<p><code>@layouts</code> acts as a helper for handling flexible content fields. Under the hood, it is essentially the exact same as <code>@fields</code>, but is provided to allow for a more clean, readable code-base in conjunction with <code>@layout</code> which calls <code>get_row_layout()</code>. It can be closed using <code>@endlayouts</code>.</p>
-<pre><code class="lang-php">@layouts(<span class="pl-s">&apos;components&apos;</span>)
-  [...]
+</code></pre></div><h2 id="layouts"><a href="#layouts" aria-hidden="true" class="header-anchor">#</a> @layouts</h2> <p><code>@layouts</code> acts as a helper for handling flexible content fields. Under the hood, it is essentially the exact same as <code>@fields</code>, but is provided to allow for a more clean, readable code-base in conjunction with <code>@layout</code> which calls <code>get_row_layout()</code>. It can be closed using <code>@endlayouts</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">layouts</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'components'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
 @endlayouts
-</code></pre>
-<p>To retrieve layouts for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-php">@layouts(<span class="pl-s">&apos;components&apos;</span>, <span class="hljs-number">1</span>)
-  [...]
+</code></pre></div><p>To retrieve layouts for a specific post, you can pass a post ID as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">layouts</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'components'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
 @endlayouts
-</code></pre>
-<h2 id="@layout">@layout</h2>
-<p><code>@layout</code> serves as a conditional checking if <code>get_row_layout()</code> equals the specified value during the <code>have_rows()</code> while loop.</p>
-<p>Using <code>@layouts</code>, this allows you to have a rather clean view when displaying your flexible content components. It can be closed using <code>@endlayout</code>.</p>
-<pre><code class="lang-php">@layouts(&apos;components&apos;)
-  @layout(&apos;card&apos;)
-    &lt;div class=&quot;card&quot;&gt;
-      @hassub(&apos;image&apos;)
-        &lt;div class=&quot;card-image&quot;&gt;
-          &lt;img src=&quot;@sub(&apos;image&apos;, &apos;url&apos;)&quot; alt=&quot;@sub(&apos;image&apos;, &apos;alt&apos;)&quot; /&gt;
-        &lt;/div&gt;
+</code></pre></div><h2 id="layout"><a href="#layout" aria-hidden="true" class="header-anchor">#</a> @layout</h2> <p><code>@layout</code> serves as a conditional checking if <code>get_row_layout()</code> equals the specified value during the <code>have_rows()</code> while loop.</p> <p>Using <code>@layouts</code>, this allows you to have a rather clean view when displaying your flexible content components. It can be closed using <code>@endlayout</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">layouts</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'components'</span><span class="token punctuation">)</span>
+  @<span class="token function">layout</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'card'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;card&quot;</span><span class="token operator">&gt;</span>
+      @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'image'</span><span class="token punctuation">)</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;card-image&quot;</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'url')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('image', 'alt')&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
       @endsub
 
-      &lt;div class=&quot;card-content&quot;&gt;
-        &lt;h2&gt;@sub(&apos;title&apos;)&lt;/h2&gt;
-        @sub(&apos;description&apos;)
-      &lt;/div&gt;
-    &lt;/div&gt;
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;card-content&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+        @<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'description'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
   @endlayout
 
-  @layout(&apos;button&apos;)
-    @hassub(&apos;url&apos;)
-      &lt;a href=&quot;@sub(&apos;url&apos;)&quot; class=&quot;button button--@sub(&apos;color&apos;) button--@sub(&apos;size&apos;)&quot;&gt;
-        @hassub(&apos;icon&apos;)
-          &lt;i class=&quot;fa fa-@sub(&apos;icon&apos;)&quot;&gt;&lt;/i&gt;
+  @<span class="token function">layout</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'button'</span><span class="token punctuation">)</span>
+    @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('url')&quot;</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;button button--@sub('color') button--@sub('size')&quot;</span><span class="token operator">&gt;</span>
+        @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'icon'</span><span class="token punctuation">)</span>
+          <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fa fa-@sub('icon')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
         @endsub
-        &lt;span&gt;@sub(&apos;label&apos;)&lt;/span&gt;
-      &lt;/a&gt;
+        <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'label'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
     @endsub
   @endlayout
 
-  @layout(&apos;content&apos;)
-    @hassub(&apos;content&apos;)
-      &lt;div class=&quot;content&quot;&gt;
-        @sub(&apos;content&apos;)
-      &lt;/div&gt;
+  @<span class="token function">layout</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'content'</span><span class="token punctuation">)</span>
+    @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'content'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;content&quot;</span><span class="token operator">&gt;</span>
+        @<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'content'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
     @endsub
   @endlayout
 @endlayouts
-</code></pre>
-<h2 id="@group">@group</h2>
-<p><code>@group</code> acts as a helper for handling grouped fields. Under the hood, it is essentially the exact same as <code>@fields</code> and thus serves as a simple alias for code readability purposes. Which one you prefer is entirely up to you. It can be closed using <code>@endgroup</code>.</p>
-<pre><code class="lang-php">@group(&apos;button&apos;)
-  @hassub(&apos;url&apos;)
-    &lt;a href=&quot;@sub(&apos;url&apos;)&quot; class=&quot;button button--@sub(&apos;color&apos;)&quot;&gt;
-      @sub(&apos;label&apos;)
-    &lt;/a&gt;
+</code></pre></div><h2 id="group"><a href="#group" aria-hidden="true" class="header-anchor">#</a> @group</h2> <p><code>@group</code> acts as a helper for handling grouped fields. Under the hood, it is essentially the exact same as <code>@fields</code> and thus serves as a simple alias for code readability purposes. Which one you prefer is entirely up to you. It can be closed using <code>@endgroup</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">group</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'button'</span><span class="token punctuation">)</span>
+  @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('url')&quot;</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;button button--@sub('color')&quot;</span><span class="token operator">&gt;</span>
+      @<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'label'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
   @endsub
 @endgroup
-</code></pre>
-<p>To retrieve a group for a specific post, you can pass a post ID as a second parameter:</p>
-<pre><code class="lang-php">@group(&apos;button&apos;, 1)
-  @hassub(&apos;url&apos;)
-    &lt;a href=&quot;@sub(&apos;url&apos;)&quot; class=&quot;button button--@sub(&apos;color&apos;)&quot;&gt;
-      @sub(&apos;label&apos;)
-    &lt;/a&gt;
+</code></pre></div><p>To retrieve a group for a specific post, you can pass a post ID as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">group</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'button'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+  @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('url')&quot;</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;button button--@sub('color')&quot;</span><span class="token operator">&gt;</span>
+      @<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'label'</span><span class="token punctuation">)</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
   @endsub
 @endgroup
-</code></pre>
-<h2 id="@option">@option</h2>
-<p><code>@option</code> echo&#x2019;s the specified theme options field using <code>get_field($field, &apos;option&apos;)</code>.</p>
-<pre><code class="lang-php">Find us on &lt;a href=<span class="pl-s">&quot;@option(&apos;facebook_url&apos;)&quot;</span> target=<span class="pl-s">&quot;_blank&quot;</span>&gt;Facebook&lt;/a&gt;
-</code></pre>
-<p>If the option is an array, you can pass the key as a second parameter:</p>
-<pre><code class="lang-php">&lt;div class=&quot;navbar-brand&quot;&gt;
-  &lt;a class=&quot;navbar-item&quot; href=&quot;{{ home_url() }}&quot;&gt;
-    &lt;img src=&quot;@option(&apos;logo&apos;, &apos;url&apos;)&quot; alt=&quot;{{ get_bloginfo(&apos;name&apos;, &apos;display&apos;) }}&quot; /&gt;
-  &lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-<h2 id="@hasoption">@hasoption</h2>
-<p><code>@hasoption</code> is a simple conditional checking if the specified theme option field exists and is not empty. It can be closed using <code>@endoption</code>.</p>
-<pre><code class="lang-php">@hasoption(<span class="pl-s">&apos;facebook_url&apos;</span>)
-  Find us on &lt;a href=<span class="pl-s">&quot;@option(&apos;facebook_url&apos;)&quot;</span> target=<span class="pl-s">&quot;_blank&quot;</span>&gt;Facebook&lt;/a&gt;
+</code></pre></div><h2 id="option"><a href="#option" aria-hidden="true" class="header-anchor">#</a> @option</h2> <p><code>@option</code> echo's the specified theme options field using <code>get_field($field, 'option')</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>Find us on <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@option('facebook_url')&quot;</span> target<span class="token operator">=</span><span class="token double-quoted-string string">&quot;_blank&quot;</span><span class="token operator">&gt;</span>Facebook<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+</code></pre></div><p>If the option is an array, you can pass the key as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;navbar-brand&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;navbar-item&quot;</span> href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;{{ home_url() }}&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@option('logo', 'url')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;{{ get_bloginfo('name', 'display') }}&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="hasoption"><a href="#hasoption" aria-hidden="true" class="header-anchor">#</a> @hasoption</h2> <p><code>@hasoption</code> is a simple conditional checking if the specified theme option field exists and is not empty. It can be closed using <code>@endoption</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasoption</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'facebook_url'</span><span class="token punctuation">)</span>
+  Find us on <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@option('facebook_url')&quot;</span> target<span class="token operator">=</span><span class="token double-quoted-string string">&quot;_blank&quot;</span><span class="token operator">&gt;</span>Facebook<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
 @endoption
-</code></pre>
-<p>If the option you are checking against is an array, you can pass the array key as a second parameter:</p>
-<pre><code class="lang-php">@hasoption(&apos;facebook&apos;, &apos;url&apos;)
-  &lt;a href=&quot;@option(&apos;facebook&apos;, &apos;url&apos;)&quot; target=&quot;_blank&quot;&gt;
-    @hasoption(&apos;facebook&apos;, &apos;icon&apos;)
-      &lt;span class=&quot;icon&quot;&gt;
-        &lt;i class=&quot;fas @option(&apos;facebook&apos;, &apos;icon&apos;)&quot;&gt;&lt;/i&gt;
-      &lt;/span&gt;
-    @else 
-      &lt;span class=&quot;label&quot;&gt;Facebook&lt;/span&gt;
+</code></pre></div><p>If the option you are checking against is an array, you can pass the array key as a second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasoption</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'facebook'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'url'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@option('facebook', 'url')&quot;</span> target<span class="token operator">=</span><span class="token double-quoted-string string">&quot;_blank&quot;</span><span class="token operator">&gt;</span>
+    @<span class="token function">hasoption</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'facebook'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'icon'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;icon&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas @option('facebook', 'icon')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+    @<span class="token keyword">else</span> 
+      <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;label&quot;</span><span class="token operator">&gt;</span>Facebook<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
     @endoption
-  &lt;/a&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
 @endoption
-</code></pre>
-<h2 id="@isoption">@isoption</h2>
-<p><code>@isoption</code> is a simple conditional for checking if your theme option field equals a specified value. It can be closed using <code>@endoption</code>.</p>
-<pre><code class="lang-php">@isoption(<span class="pl-s">&apos;logo_type&apos;</span>, <span class="pl-s">&apos;image&apos;</span>)
-  &lt;img src=<span class="pl-s">&quot;@option(&apos;logo&apos;)&quot;</span> alt=<span class="pl-s">&quot;{{ get_bloginfo(&apos;name&apos;, &apos;display&apos;) }}&quot;</span> /&gt;
+</code></pre></div><h2 id="isoption"><a href="#isoption" aria-hidden="true" class="header-anchor">#</a> @isoption</h2> <p><code>@isoption</code> is a simple conditional for checking if your theme option field equals a specified value. It can be closed using <code>@endoption</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isoption</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'logo_type'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'image'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@option('logo')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;{{ get_bloginfo('name', 'display') }}&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
 @endoption
-</code></pre>
-<p>If the option you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p>
-<pre><code class="lang-php">@isoption(<span class="pl-s">&apos;logo&apos;</span>, <span class="pl-s">&apos;type&apos;</span>, <span class="pl-s">&apos;image&apos;</span>)
-  &lt;img src=<span class="pl-s">&quot;@option(&apos;logo&apos;, &apos;url&apos;)&quot;</span> alt=<span class="pl-s">&quot;{{ get_bloginfo(&apos;name&apos;, &apos;display&apos;) }}&quot;</span> /&gt;
+</code></pre></div><p>If the option you are checking against is an array, you can pass the array key as a second parameter and the value you are checking against as a third parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">isoption</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'logo'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'type'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'image'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@option('logo', 'url')&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;{{ get_bloginfo('name', 'display') }}&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
 @endoption
-</code></pre>
-<h2 id="@options">@options</h2>
-<p><code>@options</code> acts as a helper for handling repeater and group fields within&#x2019; your theme options. Under the hood, it is essentially the exact same as <code>@fields</code> and <code>@group</code> except it automatically has the theme options ID <code>&apos;option&apos;</code> passed to it. It can be closed using <code>@endoptions</code>.</p>
-<pre><code class="lang-php">@hasoption(&apos;social&apos;)
-  &lt;ul class=&quot;social&quot;&gt;
-    @options(&apos;social&apos;)
-      &lt;li&gt;
-        &lt;a href=&quot;@sub(&apos;url&apos;)&quot; target=&quot;_blank&quot;&gt;
-          @hassub(&apos;icon&apos;)
-            &lt;span class=&quot;icon&quot;&gt;
-              &lt;i class=&quot;fas fa-@sub(&apos;icon&apos;)&quot;&gt;&lt;/i&gt;
-            &lt;/span&gt;
+</code></pre></div><h2 id="options"><a href="#options" aria-hidden="true" class="header-anchor">#</a> @options</h2> <p><code>@options</code> acts as a helper for handling repeater and group fields within' your theme options. Under the hood, it is essentially the exact same as <code>@fields</code> and <code>@group</code> except it automatically has the theme options ID <code>'option'</code> passed to it. It can be closed using <code>@endoptions</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">hasoption</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'social'</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>ul <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;social&quot;</span><span class="token operator">&gt;</span>
+    @<span class="token function">options</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'social'</span><span class="token punctuation">)</span>
+      <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@sub('url')&quot;</span> target<span class="token operator">=</span><span class="token double-quoted-string string">&quot;_blank&quot;</span><span class="token operator">&gt;</span>
+          @<span class="token function">hassub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'icon'</span><span class="token punctuation">)</span>
+            <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;icon&quot;</span><span class="token operator">&gt;</span>
+              <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fas fa-@sub('icon')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
           @endsub
-          &lt;span&gt;@sub(&apos;platform&apos;)&lt;/span&gt;
-        &lt;/a&gt;
-      &lt;/li&gt;
+          <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>@<span class="token function">sub</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'platform'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
     @endoptions
-  &lt;/ul&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
 @endoption
-</code></pre>
-
-        </div>
-        <div class="footer-nav">
-          <div class="left"><a href="../usage/wordpress.html"><span class="title">WordPress</span></a></div>
-          <div class="right"><a href="../usage/helpers.html"><span class="label">Next: </span><span class="title">Helpers</span></a></div>
-        </div>
-      </div>
-    </div>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/usage/wordpress.html" class="prev">
+          WordPress
+        </a></span> <span class="next"><a href="/usage/helpers.html">
+          Helpers
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.e6553320.js" defer></script><script src="/assets/js/5.2215a1af.js" defer></script>
   </body>
 </html>

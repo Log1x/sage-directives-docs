@@ -1,325 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="../assets/style.css?t=90051322">
-    <link rel="stylesheet" href="../dist/styles/main.css?t=cabfb525">
-    <script src="../assets/script.js?t=93f1a66c"></script>
-    <title>WordPress - Sage Directives</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>WordPress | Sage Directives</title>
+    <meta name="description" content="Empower your Roots Sage workflow">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,800,800i,900,900i" rel="stylesheet" type="text/css">
+    
+    <link rel="preload" href="/assets/css/0.styles.93f57443.css" as="style"><link rel="preload" href="/assets/js/app.e6553320.js" as="script"><link rel="preload" href="/assets/js/7.0fc8e456.js" as="script"><link rel="prefetch" href="/assets/js/2.d8f505d4.js"><link rel="prefetch" href="/assets/js/3.088e282e.js"><link rel="prefetch" href="/assets/js/4.13c88ee5.js"><link rel="prefetch" href="/assets/js/5.2215a1af.js"><link rel="prefetch" href="/assets/js/6.36f2feb4.js"><link rel="prefetch" href="/assets/js/8.dde3f876.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.93f57443.css">
   </head>
-  <body class="-menu-visible">
-    <div class="doc-layout">
-      <div class="toggle menu-toggle js-menu-toggle"></div>
-      <div class="menu toc-menu">
-        <ul>
-          <li class="menu-item -level-0 -parent">
-            <ul class="submenu">
-              <li class="menu-item -level-1"><a class="link title  link-index" href="../index.html">Sage Directives</a>
-              </li>
-              <li class="menu-item -level-1 -parent"><span class="title">Usage</span>
-                <ul class="submenu">
-                  <li class="menu-item -level-2"><a class="link title -active link-usagewordpress" href="../usage/wordpress.html">WordPress</a>
-                    <ul class="headings heading-list">
-                      <li class="heading-item -depth-2"><a class="hlink link-@query" href="#@query">@query</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@posts" href="#@posts">@posts</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@title" href="#@title">@title</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@content" href="#@content">@content</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@excerpt" href="#@excerpt">@excerpt</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@permalink" href="#@permalink">@permalink</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@thumbnail" href="#@thumbnail">@thumbnail</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@author" href="#@author">@author</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@authorurl" href="#@authorurl">@authorurl</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@published" href="#@published">@published</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@modified" href="#@modified">@modified</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@category" href="#@category">@category</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@categories" href="#@categories">@categories</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@term" href="#@term">@term</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@terms" href="#@terms">@terms</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@shortcode" href="#@shortcode">@shortcode</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@role" href="#@role">@role</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@user" href="#@user">@user</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@guest" href="#@guest">@guest</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@wpautop" href="#@wpautop">@wpautop</a>
-                      </li>
-                      <li class="heading-item -depth-2"><a class="hlink link-@wpautokp" href="#@wpautokp">@wpautokp</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="menu-item -level-2"><a class="link title  link-usageacf" href="../usage/acf.html">ACF</a>
-                  </li>
-                  <li class="menu-item -level-2"><a class="link title  link-usagehelpers" href="../usage/helpers.html">Helpers</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="body page-usagewordpress">
-        <div class="header-nav">
-          <div class="right"><a class="iconlink" href="https://github.com/log1x/sage-directives" data-title="log1x/sage-directives">
-              <!-- span.title Open in GitHub--><span class="icon -github"></span></a>
-          </div>
-        </div>
-        <div class="markdown-body"><h1 id="wordpress">WordPress</h1>
-<p>The following directives are specific to WordPress core functionality.</p>
-<h2 id="@query">@query</h2>
-<p><code>@query</code> initializes a standard <code>WP_Query</code> as <code>$query</code> and accepts the usual <code>WP_Query</code> <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Parameters">parameters</a> as an array.</p>
-<pre><code class="lang-php">@query([
-  <span class="pl-s">&apos;post_type&apos;</span> =&gt; <span class="pl-s">&apos;post&apos;</span>
-])
-</code></pre>
-<h2 id="@posts">@posts</h2>
-<p><code>@posts</code> begins the post loop and by default, assumes that <code>WP_Query</code> is set to <code>$query</code> (which is the case when using <code>@query</code>). It is wrapped in a <code>have_posts()</code> conditional and thus will return <code>null</code> if no posts are found.</p>
-<p><code>@endposts</code> is available to end your loop and <code>have_posts()</code> conditional as well as resetting your loop with <a href="https://codex.wordpress.org/Function_Reference/wp_reset_postdata"><code>wp_reset_postdata()</code></a>.</p>
-<pre><code class="lang-php">@query([
-  &apos;post_type&apos; =&gt; &apos;post&apos;
-])
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Sage Directives</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://discourse.roots.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Discourse
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://discourse.roots.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Discourse
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Changelog
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/log1x/sage-directives" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>Getting Started</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/installation.html" class="sidebar-link">Installation</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Usage</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/usage/wordpress.html" class="active sidebar-link">WordPress</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/usage/wordpress.html#query" class="sidebar-link">@query</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#posts" class="sidebar-link">@posts</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#title" class="sidebar-link">@title</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#content" class="sidebar-link">@content</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#excerpt" class="sidebar-link">@excerpt</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#permalink" class="sidebar-link">@permalink</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#thumbnail" class="sidebar-link">@thumbnail</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#author" class="sidebar-link">@author</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#authorurl" class="sidebar-link">@authorurl</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#published" class="sidebar-link">@published</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#modified" class="sidebar-link">@modified</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#category" class="sidebar-link">@category</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#categories" class="sidebar-link">@categories</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#term" class="sidebar-link">@term</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#terms" class="sidebar-link">@terms</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#shortcode" class="sidebar-link">@shortcode</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#role" class="sidebar-link">@role</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#user" class="sidebar-link">@user</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#guest" class="sidebar-link">@guest</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#wpautop" class="sidebar-link">@wpautop</a></li><li class="sidebar-sub-header"><a href="/usage/wordpress.html#wpautokp" class="sidebar-link">@wpautokp</a></li></ul></li><li><a href="/usage/acf.html" class="sidebar-link">ACF</a></li><li><a href="/usage/helpers.html" class="sidebar-link">Helpers</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="wordpress"><a href="#wordpress" aria-hidden="true" class="header-anchor">#</a> WordPress</h1> <p>The following directives are specific to WordPress core functionality.</p> <h2 id="query"><a href="#query" aria-hidden="true" class="header-anchor">#</a> @query</h2> <p><code>@query</code> initializes a standard <code>WP_Query</code> as <code>$query</code> and accepts the usual <code>WP_Query</code> <a href="https://codex.wordpress.org/Class_Reference/WP_Query#Parameters" target="_blank" rel="noopener noreferrer">parameters<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> as an array.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'post_type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'post'</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="posts"><a href="#posts" aria-hidden="true" class="header-anchor">#</a> @posts</h2> <p><code>@posts</code> begins the post loop and by default, assumes that <code>WP_Query</code> is set to <code>$query</code> (which is the case when using <code>@query</code>). It is wrapped in a <code>have_posts()</code> conditional and thus will return <code>null</code> if no posts are found.</p> <p><code>@endposts</code> is available to end your loop and <code>have_posts()</code> conditional as well as resetting your loop with <a href="https://codex.wordpress.org/Function_Reference/wp_reset_postdata" target="_blank" rel="noopener noreferrer"><code>wp_reset_postdata()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token single-quoted-string string">'post_type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'post'</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
 
 @posts
-  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
-  &lt;div class=&quot;entry-content&quot;&gt;
+  <span class="token operator">&lt;</span>h2 <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-title&quot;</span><span class="token operator">&gt;</span>@title<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-content&quot;</span><span class="token operator">&gt;</span>
     @content
-  &lt;/div&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 @endposts
-</code></pre>
-<p>If an instance of <code>WP_Query</code> is passed to <code>@posts</code>, it will use that instead:</p>
-<pre><code class="lang-php">@php
-  $query = new WP_Query([
-    &apos;post_type&apos; =&gt; &apos;post&apos;
-  ]);
+</code></pre></div><p>If an instance of <code>WP_Query</code> is passed to <code>@posts</code>, it will use that instead:</p> <div class="language-php extra-class"><pre class="language-php"><code>@php
+  <span class="token variable">$query</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WP_Query</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token single-quoted-string string">'post_type'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'post'</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 @endphp
 
-@posts($query)
-  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
-  &lt;div class=&quot;entry-content&quot;&gt;
+@<span class="token function">posts</span><span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>h2 <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-title&quot;</span><span class="token operator">&gt;</span>@title<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-content&quot;</span><span class="token operator">&gt;</span>
     @content
-  &lt;/div&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 @endposts
-</code></pre>
-<p>Additionally, you can pass a single post ID, post object, or an array containing a mixture of the two:</p>
-<pre><code class="lang-php">@posts(12)
-  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
-  &lt;div class=&quot;entry-content&quot;&gt;
+</code></pre></div><p>Additionally, you can pass a single post ID, post object, or an array containing a mixture of the two:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">posts</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>h2 <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-title&quot;</span><span class="token operator">&gt;</span>@title<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-content&quot;</span><span class="token operator">&gt;</span>
     @content
-  &lt;/div&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 @endposts
   
-@posts(get_post(4))
-  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
-  &lt;div class=&quot;entry-content&quot;&gt;
+@<span class="token function">posts</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>h2 <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-title&quot;</span><span class="token operator">&gt;</span>@title<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-content&quot;</span><span class="token operator">&gt;</span>
     @content
-  &lt;/div&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 @endposts
   
-@posts([6, get_post(9), 3])
-  &lt;h2 class=&quot;entry-title&quot;&gt;@title&lt;/h2&gt;
-  &lt;div class=&quot;entry-content&quot;&gt;
+@<span class="token function">posts</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token operator">&lt;</span>h2 <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-title&quot;</span><span class="token operator">&gt;</span>@title<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-content&quot;</span><span class="token operator">&gt;</span>
     @content
-  &lt;/div&gt;
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
 @endposts
-</code></pre>
-<p>When passing an array of ID&#x2019;s / objects, the posts will be sorted by the order of the array.</p>
-<p>If <code>@query</code> is not used and an argument is not passed to <code>@posts</code>, it will use the main loop from the <code>$wp_query</code> global.</p>
-<h2 id="@title">@title</h2>
-<p><code>@title</code> echo&#x2019;s the current posts title using <a href="https://developer.wordpress.org/reference/functions/get_the_title/"><code>get_the_title()</code></a>.</p>
-<pre><code class="lang-php">@title
-</code></pre>
-<p>To echo the title of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a parameter:</p>
-<pre><code class="lang-php">@title(<span class="hljs-number">1</span>)
-@title(get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<h2 id="@content">@content</h2>
-<p><code>@content</code> echo&#x2019;s the current posts content using <a href="https://developer.wordpress.org/reference/functions/the_content/"><code>the_content()</code></a>.</p>
-<pre><code class="lang-php">@content
-</code></pre>
-<h2 id="@excerpt">@excerpt</h2>
-<p><code>@excerpt</code> echo&#x2019;s the current posts excerpt using <a href="https://developer.wordpress.org/reference/functions/the_excerpt/"><code>the_excerpt()</code></a>.</p>
-<pre><code class="lang-php">@excerpt
-</code></pre>
-<h2 id="@permalink">@permalink</h2>
-<p><code>@permalink</code> echo&#x2019;s the current posts URL using <a href="https://developer.wordpress.org/reference/functions/get_permalink/"><code>get_permalink()</code></a>.</p>
-<pre><code class="lang-php">@permalink
-</code></pre>
-<p>To echo the URL of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a parameter:</p>
-<pre><code class="lang-php">@permalink(<span class="hljs-number">1</span>)
-@permalink(get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<h2 id="@thumbnail">@thumbnail</h2>
-<p><code>@thumbnail</code> echo&#x2019;s the current posts featured image using <a href="https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/"><code>get_the_post_thumbnail</code></a>. By default, it passes <code>thumbnail</code> as the size.</p>
-<pre><code class="lang-php">@thumbnail
-</code></pre>
-<p>To echo the featured image of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as the first parameter:</p>
-<pre><code class="lang-php">@thumbnail(<span class="hljs-number">1</span>)
-@thumbnail(get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<p>To echo the featured image with a specific size, you can either pass it as a parameter by it&#x2019;s self, or as the second parameter when a post ID or <code>WP_Post</code> instance is present:</p>
-<pre><code class="lang-php">@thumbnail(<span class="pl-s">&apos;full&apos;</span>)
-@thumbnail(<span class="hljs-number">1</span>, <span class="pl-s">&apos;full&apos;</span>)
-@thumbnail(get_post(<span class="hljs-number">1</span>), <span class="pl-s">&apos;full&apos;</span>)
-</code></pre>
-<p>To echo the featured image URL (without img markup), you can pass <code>false</code> as the last parameter on any of the above options:</p>
-<pre><code class="lang-php">&lt;img src=<span class="pl-s">&quot;@thumbnail(false)&quot;</span> alt=<span class="pl-s">&quot;My Image&quot;</span> /&gt;
-&lt;img src=<span class="pl-s">&quot;@thumbnail(1, false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&quot;</span> /&gt;
-&lt;img src=<span class="pl-s">&quot;@thumbnail(get_post(1), false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&quot;</span> /&gt;
-&lt;img src=<span class="pl-s">&quot;@thumbnail(&apos;full&apos;, false)&quot;</span> alt=<span class="pl-s">&quot;Full Image&quot;</span> /&gt;
-&lt;img src=<span class="pl-s">&quot;@thumbnail(1, &apos;full&apos;, false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&apos;s Full Image&quot;</span> /&gt;
-&lt;img src=<span class="pl-s">&quot;@thumbnail(get_post(1), &apos;full&apos;, false)&quot;</span> alt=<span class="pl-s">&quot;Post 1&apos;s Full Image&quot;</span> /&gt;
-</code></pre>
-<h2 id="@author">@author</h2>
-<p><code>@author</code> echo&#x2019;s the author of the current posts display name.</p>
-<pre><code class="lang-php">@author
-</code></pre>
-<p>To echo the display name of a specific author, you can pass the author&#x2019;s ID as a parameter:</p>
-<pre><code class="lang-php">@author(<span class="hljs-number">1</span>)
-</code></pre>
-<h2 id="@authorurl">@authorurl</h2>
-<p><code>@authorurl</code> echo&#x2019;s the author of the current posts archive URL.</p>
-<pre><code class="lang-php">&lt;span class=&quot;author&quot; itemprop=&quot;author&quot; itemscope itemtype=&quot;http://schema.org/Person&quot;&gt;
-  &lt;a href=&quot;@authorurl&quot; itemprop=&quot;url&quot;&gt;
-    &lt;span class=&quot;fn&quot; itemprop=&quot;name&quot; rel=&quot;author&quot;&gt;@author&lt;/span&gt;
-  &lt;/a&gt;
-&lt;/span&gt;
-</code></pre>
-<p>To echo the URL of a specific author, you can pass the author&#x2019;s ID as a parameter:</p>
-<pre><code class="lang-php">&lt;a href=<span class="pl-s">&quot;@authorurl(2)&quot;</span>&gt;@author&lt;/a&gt;
-</code></pre>
-<h2 id="@published">@published</h2>
-<p><code>@published</code> echo&#x2019;s the current posts published date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p>
-<pre><code class="lang-php">@published
-</code></pre>
-<p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time">formatting of the date</a>, you can pass it as the first parameter:</p>
-<pre><code class="lang-php">&lt;time class=&quot;entry-time&quot;&gt;
-  &lt;span&gt;@published(&apos;F j, Y&apos;)&lt;/span&gt;
-  &lt;span itemprop=&quot;datePublished&quot; content=&quot;@published(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
-&lt;/time&gt;
-</code></pre>
-<p>To echo the published date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p>
-<pre><code class="lang-php">@published(<span class="hljs-number">1</span>)
-@published(get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<p>To format the published date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p>
-<pre><code class="lang-php">@published(<span class="pl-s">&apos;F j, Y&apos;</span>, <span class="hljs-number">1</span>)
-@published(<span class="pl-s">&apos;F j, Y&apos;</span>, get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<h2 id="@modified">@modified</h2>
-<p><code>@modified</code> is similar to <code>@published</code>, but instead echo&#x2019;s the current posts last modified date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p>
-<pre><code class="lang-php">@modified
-</code></pre>
-<p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time">formatting of the date</a>, you can pass it as the first parameter:</p>
-<pre><code class="lang-php">&lt;time class=&quot;entry-time&quot;&gt;
-  &lt;span&gt;@published(&apos;F j, Y&apos;)&lt;/span&gt;
-  &lt;span itemprop=&quot;datePublished&quot; content=&quot;@published(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
-  &lt;span itemprop=&quot;dateModified&quot; class=&quot;updated&quot; content=&quot;@modified(&apos;c&apos;)&quot;&gt;&lt;/span&gt;
-&lt;/time&gt;
-</code></pre>
-<p>To echo the modified date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p>
-<pre><code class="lang-php">@modified(<span class="hljs-number">1</span>)
-@modified(get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<p>To format the modified date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p>
-<pre><code class="lang-php">@modified(<span class="pl-s">&apos;F j, Y&apos;</span>, <span class="hljs-number">1</span>)
-@modified(<span class="pl-s">&apos;F j, Y&apos;</span>, get_post(<span class="hljs-number">1</span>))
-</code></pre>
-<h2 id="@category">@category</h2>
-<p><code>@category</code> echo&#x2019;s the first category of the current post.</p>
-<pre><code class="lang-php">@category
-</code></pre>
-<p>To echo the category as a link, pass <code>true</code> as a parameter:</p>
-<pre><code class="lang-php">@category(<span class="pl-k">true</span>)
-</code></pre>
-<p>To echo the category of a specific post, pass the post ID as a parameter:</p>
-<pre><code class="lang-php">@category(<span class="hljs-number">1</span>)
-</code></pre>
-<p>To echo the category of a specific post as a link, pass the post ID as the first parameter, and <code>true</code> as the second parameter:</p>
-<pre><code class="lang-php">@category(<span class="hljs-number">1</span>, <span class="pl-k">true</span>)
-</code></pre>
-<h2 id="@categories">@categories</h2>
-<p><code>@categories</code> echo&#x2019;s a comma seperated list of the current post&#x2019;s categories.</p>
-<pre><code class="lang-php">@categories
-</code></pre>
-<p>To echo the categories of a specific post, pass the post ID as the first parameter:</p>
-<pre><code class="lang-php">@categories(<span class="hljs-number">1</span>)
-</code></pre>
-<p>Similar to <code>@category</code>, if you would like to return the categories as links, pass <code>true</code> as the first parameter when by it&#x2019;s self, or as the second parameter when a post ID is present:</p>
-<pre><code class="lang-php">@categories(<span class="pl-k">true</span>)
-@categories(<span class="hljs-number">1</span>, <span class="pl-k">true</span>)
-</code></pre>
-<h2 id="@term">@term</h2>
-<p><code>@term</code> echo&#x2019;s the taxonomy term of the current post. If multiple terms are present, it will echo the first term returned in the array.</p>
-<pre><code class="lang-php">@term(<span class="pl-s">&apos;genre&apos;</span>)
-</code></pre>
-<p>Similar to <code>@category</code>, if you would like to return the terms of a specific post or as links, you can follow the same syntax, except keeping the taxonomy name as the first parameter:</p>
-<pre><code class="lang-php">@term(<span class="pl-s">&apos;genre&apos;</span>, <span class="hljs-number">1</span>)
-@term(<span class="pl-s">&apos;genre&apos;</span>, <span class="hljs-number">1</span>, <span class="pl-k">false</span>)
-@term(<span class="pl-s">&apos;genre&apos;</span>, <span class="pl-k">false</span>)
-</code></pre>
-<h2 id="@terms">@terms</h2>
-<p><code>@terms</code> echo&#x2019;s a comma seperated list of the taxonomy terms of the current post.</p>
-<pre><code class="lang-php">@terms(<span class="pl-s">&apos;genre&apos;</span>)
-</code></pre>
-<p>It accepts the same parameters as <code>@term</code>:</p>
-<pre><code class="lang-php">@terms(<span class="pl-s">&apos;genre&apos;</span>, <span class="hljs-number">1</span>)
-@terms(<span class="pl-s">&apos;genre&apos;</span>, <span class="hljs-number">1</span>, <span class="pl-k">false</span>)
-@terms(<span class="pl-s">&apos;genre&apos;</span>, <span class="pl-k">false</span>)
-</code></pre>
-<h2 id="@shortcode">@shortcode</h2>
-<p><code>@shortcode</code> echo&#x2019;s the specified shortcode using <a href="https://developer.wordpress.org/reference/functions/do_shortcode/"><code>do_shortcode()</code></a>.</p>
-<pre><code class="lang-php">@shortcode(<span class="pl-s">&apos;[my-shortcode]&apos;</span>)
-</code></pre>
-<h2 id="@role">@role</h2>
-<p><code>@role</code> is a simple conditional that allows you to display specific content only to users who are logged in and have a specific role. With <a href="https://codex.wordpress.org/Function_Reference/wp_get_current_user"><code>wp_get_current_user()-&gt;roles</code></a> returning an array of roles in all lowercase, the passed role is automatically lowercased using <code>strtolower</code>. It can be closed using <code>@endrole</code>.</p>
-<pre><code class="lang-php">@role(<span class="pl-s">&apos;author&apos;</span>)
-  This content is only displayed to Authors.
+</code></pre></div><p>When passing an array of ID's / objects, the posts will be sorted by the order of the array.</p> <p>If <code>@query</code> is not used and an argument is not passed to <code>@posts</code>, it will use the main loop from the <code>$wp_query</code> global.</p> <h2 id="title"><a href="#title" aria-hidden="true" class="header-anchor">#</a> @title</h2> <p><code>@title</code> echo's the current posts title using <a href="https://developer.wordpress.org/reference/functions/get_the_title/" target="_blank" rel="noopener noreferrer"><code>get_the_title()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@title
+</code></pre></div><p>To echo the title of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">title</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">title</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="content"><a href="#content" aria-hidden="true" class="header-anchor">#</a> @content</h2> <p><code>@content</code> echo's the current posts content using <a href="https://developer.wordpress.org/reference/functions/the_content/" target="_blank" rel="noopener noreferrer"><code>the_content()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@content
+</code></pre></div><h2 id="excerpt"><a href="#excerpt" aria-hidden="true" class="header-anchor">#</a> @excerpt</h2> <p><code>@excerpt</code> echo's the current posts excerpt using <a href="https://developer.wordpress.org/reference/functions/the_excerpt/" target="_blank" rel="noopener noreferrer"><code>the_excerpt()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@excerpt
+</code></pre></div><h2 id="permalink"><a href="#permalink" aria-hidden="true" class="header-anchor">#</a> @permalink</h2> <p><code>@permalink</code> echo's the current posts URL using <a href="https://developer.wordpress.org/reference/functions/get_permalink/" target="_blank" rel="noopener noreferrer"><code>get_permalink()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@permalink
+</code></pre></div><p>To echo the URL of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as a parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">permalink</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">permalink</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="thumbnail"><a href="#thumbnail" aria-hidden="true" class="header-anchor">#</a> @thumbnail</h2> <p><code>@thumbnail</code> echo's the current posts featured image using <a href="https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/" target="_blank" rel="noopener noreferrer"><code>get_the_post_thumbnail</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. By default, it passes <code>thumbnail</code> as the size.</p> <div class="language-php extra-class"><pre class="language-php"><code>@thumbnail
+</code></pre></div><p>To echo the featured image of a specific post, you can pass the post ID or a <code>WP_Post</code> instance as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>To echo the featured image with a specific size, you can either pass it as a parameter by it's self, or as the second parameter when a post ID or <code>WP_Post</code> instance is present:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'full'</span><span class="token punctuation">)</span>
+@<span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'full'</span><span class="token punctuation">)</span>
+@<span class="token function">thumbnail</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'full'</span><span class="token punctuation">)</span>
+</code></pre></div><p>To echo the featured image URL (without img markup), you can pass <code>false</code> as the last parameter on any of the above options:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@thumbnail(false)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;My Image&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@thumbnail(1, false)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;Post 1&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@thumbnail(get_post(1), false)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;Post 1&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@thumbnail('full', false)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;Full Image&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@thumbnail(1, 'full', false)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;Post 1's Full Image&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@thumbnail(get_post(1), 'full', false)&quot;</span> alt<span class="token operator">=</span><span class="token double-quoted-string string">&quot;Post 1's Full Image&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+</code></pre></div><h2 id="author"><a href="#author" aria-hidden="true" class="header-anchor">#</a> @author</h2> <p><code>@author</code> echo's the author of the current posts display name.</p> <div class="language-php extra-class"><pre class="language-php"><code>@author
+</code></pre></div><p>To echo the display name of a specific author, you can pass the author's ID as a parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">author</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="authorurl"><a href="#authorurl" aria-hidden="true" class="header-anchor">#</a> @authorurl</h2> <p><code>@authorurl</code> echo's the author of the current posts archive URL.</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;author&quot;</span> itemprop<span class="token operator">=</span><span class="token double-quoted-string string">&quot;author&quot;</span> itemscope itemtype<span class="token operator">=</span><span class="token double-quoted-string string">&quot;http://schema.org/Person&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@authorurl&quot;</span> itemprop<span class="token operator">=</span><span class="token double-quoted-string string">&quot;url&quot;</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;fn&quot;</span> itemprop<span class="token operator">=</span><span class="token double-quoted-string string">&quot;name&quot;</span> rel<span class="token operator">=</span><span class="token double-quoted-string string">&quot;author&quot;</span><span class="token operator">&gt;</span>@author<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+</code></pre></div><p>To echo the URL of a specific author, you can pass the author's ID as a parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@authorurl(2)&quot;</span><span class="token operator">&gt;</span>@author<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="published"><a href="#published" aria-hidden="true" class="header-anchor">#</a> @published</h2> <p><code>@published</code> echo's the current posts published date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@published
+</code></pre></div><p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time" target="_blank" rel="noopener noreferrer">formatting of the date<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, you can pass it as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>time <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-time&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>@<span class="token function">published</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'F j, Y'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>span itemprop<span class="token operator">=</span><span class="token double-quoted-string string">&quot;datePublished&quot;</span> content<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@published('c')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>time<span class="token operator">&gt;</span>
+</code></pre></div><p>To echo the published date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">published</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">published</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>To format the published date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">published</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'F j, Y'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">published</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'F j, Y'</span><span class="token punctuation">,</span> <span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="modified"><a href="#modified" aria-hidden="true" class="header-anchor">#</a> @modified</h2> <p><code>@modified</code> is similar to <code>@published</code>, but instead echo's the current posts last modified date. By default, it uses the date format set in <code>Settings &gt; General</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@modified
+</code></pre></div><p>To change the <a href="https://codex.wordpress.org/Formatting_Date_and_Time" target="_blank" rel="noopener noreferrer">formatting of the date<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, you can pass it as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code><span class="token operator">&lt;</span>time <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;entry-time&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>@<span class="token function">published</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'F j, Y'</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>span itemprop<span class="token operator">=</span><span class="token double-quoted-string string">&quot;datePublished&quot;</span> content<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@published('c')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>span itemprop<span class="token operator">=</span><span class="token double-quoted-string string">&quot;dateModified&quot;</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token double-quoted-string string">&quot;updated&quot;</span> content<span class="token operator">=</span><span class="token double-quoted-string string">&quot;@modified('c')&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>time<span class="token operator">&gt;</span>
+</code></pre></div><p>To echo the modified date of a specific post, you can pass a post ID or an instance of <code>WP_Post</code> as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">modified</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">modified</span><span class="token punctuation">(</span><span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><p>To format the modified date of a specific post, you can pass the format as the first parameter, and the post ID or instance of <code>WP_Post</code> as the second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">modified</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'F j, Y'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">modified</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'F j, Y'</span><span class="token punctuation">,</span> <span class="token function">get_post</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="category"><a href="#category" aria-hidden="true" class="header-anchor">#</a> @category</h2> <p><code>@category</code> echo's the first category of the current post.</p> <div class="language-php extra-class"><pre class="language-php"><code>@category
+</code></pre></div><p>To echo the category as a link, pass <code>true</code> as a parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">category</span><span class="token punctuation">(</span><span class="token boolean constant">true</span><span class="token punctuation">)</span>
+</code></pre></div><p>To echo the category of a specific post, pass the post ID as a parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">category</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><p>To echo the category of a specific post as a link, pass the post ID as the first parameter, and <code>true</code> as the second parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">category</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean constant">true</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="categories"><a href="#categories" aria-hidden="true" class="header-anchor">#</a> @categories</h2> <p><code>@categories</code> echo's a comma seperated list of the current post's categories.</p> <div class="language-php extra-class"><pre class="language-php"><code>@categories
+</code></pre></div><p>To echo the categories of a specific post, pass the post ID as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">categories</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre></div><p>Similar to <code>@category</code>, if you would like to return the categories as links, pass <code>true</code> as the first parameter when by it's self, or as the second parameter when a post ID is present:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">categories</span><span class="token punctuation">(</span><span class="token boolean constant">true</span><span class="token punctuation">)</span>
+@<span class="token function">categories</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean constant">true</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="term"><a href="#term" aria-hidden="true" class="header-anchor">#</a> @term</h2> <p><code>@term</code> echo's the taxonomy term of the current post. If multiple terms are present, it will echo the first term returned in the array.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">term</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">)</span>
+</code></pre></div><p>Similar to <code>@category</code>, if you would like to return the terms of a specific post or as links, you can follow the same syntax, except keeping the taxonomy name as the first parameter:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">term</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">term</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean constant">false</span><span class="token punctuation">)</span>
+@<span class="token function">term</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">,</span> <span class="token boolean constant">false</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="terms"><a href="#terms" aria-hidden="true" class="header-anchor">#</a> @terms</h2> <p><code>@terms</code> echo's a comma seperated list of the taxonomy terms of the current post.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">terms</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">)</span>
+</code></pre></div><p>It accepts the same parameters as <code>@term</code>:</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">terms</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+@<span class="token function">terms</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean constant">false</span><span class="token punctuation">)</span>
+@<span class="token function">terms</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'genre'</span><span class="token punctuation">,</span> <span class="token boolean constant">false</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="shortcode"><a href="#shortcode" aria-hidden="true" class="header-anchor">#</a> @shortcode</h2> <p><code>@shortcode</code> echo's the specified shortcode using <a href="https://developer.wordpress.org/reference/functions/do_shortcode/" target="_blank" rel="noopener noreferrer"><code>do_shortcode()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">shortcode</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'[my-shortcode]'</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="role"><a href="#role" aria-hidden="true" class="header-anchor">#</a> @role</h2> <p><code>@role</code> is a simple conditional that allows you to display specific content only to users who are logged in and have a specific role. With <a href="https://codex.wordpress.org/Function_Reference/wp_get_current_user" target="_blank" rel="noopener noreferrer"><code>wp_get_current_user()-&gt;roles</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> returning an array of roles in all lowercase, the passed role is automatically lowercased using <code>strtolower</code>. It can be closed using <code>@endrole</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">role</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'author'</span><span class="token punctuation">)</span>
+  This content is only displayed to Authors<span class="token punctuation">.</span>
 @endrole
-</code></pre>
-<h2 id="@user">@user</h2>
-<p><code>@user</code> is a simple <code>is_user_logged_in()</code> conditional to display specific content only when a user is logged in. It can be closed using <code>@enduser</code>.</p>
-<pre><code class="lang-php">@user
-  You are logged in!
+</code></pre></div><h2 id="user"><a href="#user" aria-hidden="true" class="header-anchor">#</a> @user</h2> <p><code>@user</code> is a simple <code>is_user_logged_in()</code> conditional to display specific content only when a user is logged in. It can be closed using <code>@enduser</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@user
+  You are logged in<span class="token operator">!</span>
 @enduser
-</code></pre>
-<h2 id="@guest">@guest</h2>
-<p><code>@guest</code> is a simple <code>! is_user_logged_in()</code> conditional to display specific content only when a user is not logged in. It can be closed using <code>@endguest</code>.</p>
-<pre><code class="lang-php">@guest
-  You must be &lt;a href=<span class="pl-s">&quot;/wp-login.php&quot;</span>&gt;logged in&lt;/a&gt; to view this content.
+</code></pre></div><h2 id="guest"><a href="#guest" aria-hidden="true" class="header-anchor">#</a> @guest</h2> <p><code>@guest</code> is a simple <code>! is_user_logged_in()</code> conditional to display specific content only when a user is not logged in. It can be closed using <code>@endguest</code>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@guest
+  You must be <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token double-quoted-string string">&quot;/wp-login.php&quot;</span><span class="token operator">&gt;</span>logged in<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span> to view this content<span class="token punctuation">.</span>
 @endguest
-</code></pre>
-<h2 id="@wpautop">@wpautop</h2>
-<p><code>@wpautop</code> runs a passed string through <a href="https://codex.wordpress.org/Function_Reference/wpautop"><code>wpautop()</code></a> and echo&#x2019;s the output.</p>
-<pre><code class="lang-php">@wpautop($content)
-</code></pre>
-<h2 id="@wpautokp">@wpautokp</h2>
-<p><code>@wpautokp</code> does the same as <code>@wpautop</code> but also sanitizes the string with <a href="https://codex.wordpress.org/Function_Reference/wp_kses_post"><code>wp_kses_post()</code></a>.</p>
-<pre><code class="lang-php">@wpautokp($content)
-</code></pre>
-
-        </div>
-        <div class="footer-nav">
-          <div class="left"><a href="../index.html"><span class="title">Sage Directives</span></a></div>
-          <div class="right"><a href="../usage/acf.html"><span class="label">Next: </span><span class="title">ACF</span></a></div>
-        </div>
-      </div>
-    </div>
+</code></pre></div><h2 id="wpautop"><a href="#wpautop" aria-hidden="true" class="header-anchor">#</a> @wpautop</h2> <p><code>@wpautop</code> runs a passed string through <a href="https://codex.wordpress.org/Function_Reference/wpautop" target="_blank" rel="noopener noreferrer"><code>wpautop()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> and echo's the output.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">wpautop</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="wpautokp"><a href="#wpautokp" aria-hidden="true" class="header-anchor">#</a> @wpautokp</h2> <p><code>@wpautokp</code> does the same as <code>@wpautop</code> but also sanitizes the string with <a href="https://codex.wordpress.org/Function_Reference/wp_kses_post" target="_blank" rel="noopener noreferrer"><code>wp_kses_post()</code><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p> <div class="language-php extra-class"><pre class="language-php"><code>@<span class="token function">wpautokp</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">)</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/installation.html" class="prev">
+          Installation
+        </a></span> <span class="next"><a href="/usage/acf.html">
+          ACF
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.e6553320.js" defer></script><script src="/assets/js/7.0fc8e456.js" defer></script>
   </body>
 </html>
